@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML块级元素和行内元素</title>
+</head>
+<body>
+    <!-- 块级元素 独占一行-->
+    <!-- <marquee>test</marquee>
+    <marquee>test</marquee>
+    <h1>test</h1>
+    <h1>test</h1>
+    <div>test</div>
+    <div>test</div>
+    <p>test</p>
+    <p>test</p> -->
+
+    <!-- 行内元素 不独占一行-->
+    <!-- <input type="text">
+    <input type="text">
+    <span>test</span>
+    <span>test</span> -->
+  
+    <!-- 规则1：块级元素中能写：行内元素、块级元素，几乎（h1-h6不能嵌套）什么都能写 -->
+    <!-- <div>
+        <div>
+            <span>123</span>
+            <input type="text">
+        </div>
+    </div> -->
+    <!-- 规则2：行内元素中能写：行内元素，但不能写块级元素 -->
+    <!-- <span>
+        <span>123</span>
+        <input type="text">
+        <span>1234</span>
+        <div>111</div> 这个div会导致系统判断错误，
+            把后面的12345的span也判断为属于这个span，导致CSS调整错误
+    </span>
+    <span>12345</span> -->
+    <!-- 特殊规则：h1到h6不能相互嵌套 -->
+    <!-- 特殊规则：p标签中不能写块元素 -->
+    <p>
+        <marquee></marquee>
+        <!-- 即使他是块级元素，也不会把marquee丢出去，因为marquee已废除，CSS实现效果更好 -->
+    </p>
+</body>
+</html>
