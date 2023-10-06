@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单_基本结构</title>
+</head>
+<body>
+    <!-- 百度后端工程师定义的，/s访问搜索api，wd搜索内容-->
+    <form action="https://www.baidu.com/s"> 
+        <input type="text" name="wd">
+        <button>baidu search</button>
+    </form>
+    <hr>
+    <form action="https:search.jd.com/search" target="_blank" method="get">
+        <input type="text" name="keyword">
+        <button>jd search</button>
+    </form>
+    <hr>
+    <a href="https:search.jd.com/search?keyword=手机">搜索手机</a>
+    <!-- action是访问网址，name指定提交数据的名字，都由目标网站自定义 -->
+    <!-- form注重收集用户数据，a注重跳转 -->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格_常用属性</title>
+    <style>
+        caption{
+            color: aqua;
+            font-size: 40px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <!-- 表格table：表格标题caption、
+        头部thead、主体tbody、脚注tfoot、
+        tr是表格任意行、th是表头部单元格thead、
+        td是表主体和脚注单元格tdata -->
+    <!-- border属性只能对最外面的边框进行调节，内部边框仍然是1 -->
+    <!-- width可以调整体；
+        height属性只能调整tbody的高度（要求至少五百），
+        不调节thead和tfoot -->
+    <!-- cellspace调整边框和边框的距离（无法重叠合并，要用css） -->
+    <table border="1" width="500" height="300" cellspacing="0">
+        <!-- html中caption无属性 -->
+        <caption>学生信息</caption>
+        <!-- thead写height、
+            align左右对齐(left, right, center默认值)
+            valign上下对齐(top, middle, bottom)-->
+        <thead height="50" align="center" valign="middle">
+            <tr>
+                <th width="50" height="100" align="right" valign="bottom">姓名</th>
+                <th>性别</th>
+                <th>民族</th>
+                <th>政治面貌</th>
+            </tr>
+        </thead>
+        <!-- tbody和thead一样的 -->
+        <!-- 如果height设置过低，
+            导致head和body和foot的和小于table height的设定值，
+            则系统会自动设置 -->
+        <!-- tbody的align默认值是left -->
+        <tbody height="500" align="center" valign="middle">
+            <tr height="50" align="center" valign="middle"> 
+                <td>张三</td>
+                <td>女</td>
+                <td>汉族</td>
+                <td>团员</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>女</td>
+                <td>汉族</td>
+                <td>团员</td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">王五</td>
+                <td>女</td>
+                <td>汉族</td>
+                <td>团员</td>
+            </tr>
+        </tbody>
+        <!-- tfoot和thead一样 -->
+        <tfoot height="50" align="center" valign="middle">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>共计：3人</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

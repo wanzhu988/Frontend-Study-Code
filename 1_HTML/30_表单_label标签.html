@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单_label标签</title>
+</head>
+<body>
+    <form action="https://search.jd.com/search">
+        <!-- label对表单控件进行关联，点击关键字就可以聚焦到对应内容 -->
+        <!-- 两种关联方式：for和id，label包裹 -->
+        <label for="acc">account: </label>
+        <input type="text" id="acc" name="account" maxlength="10"><br>
+        <!-- <label for="pwd">password: </label> -->
+        <label>
+            password:
+            <input type="password" id="pwd" name="password" maxlength="6"><br> 
+        </label>
+        
+        gender: 
+        <input type="radio" id="ml" name="gender" value="male"> 
+        <label for="ml">男</label>
+        <label>
+            <input type="radio" name="gender" value="female" >女
+        </label>
+        <br>
+
+        hobby:
+        <input type="checkbox" id="smk" name="hobby" value="smoking" >
+        <label for="smk">抽烟</label>
+        <label>
+            <input type="checkbox" name="hobby" value="drinking" >喝酒
+        </label>
+        <label>
+            <input type="checkbox" name="hobby" value="dacing" >跳舞
+        </label>
+        <br>
+
+        <label>
+            other：
+            <textarea name="other" cols="10" rows="3"></textarea>
+        </label>
+        <br>
+        <label>
+            from:
+            <select name="place">
+                <option value="鄂" >Hubei</option>
+                <option value="鲁">Shandong</option>
+                <option value="冀">Hebei</option>
+            </select>
+            <input type="hidden" name="from" value="toutiao">
+            <br>
+
+            <input type="submit" value="确认">
+            <input type="reset" value="点我重置">
+            <input type="button" value="查询账户是否被注册">
+        </label>
+    </form>
+</body>
+</html>

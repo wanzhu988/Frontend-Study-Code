@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表_注意事项</title>
+</head>
+<body>
+
+    <!-- 1.ol或者ul的子元素最好都是li，想要包含别的元素如
+    a标签，可以写到li元素里面 -->
+    <!-- 2.li最好不要单独使用 -->
+    <h2>要把大象放进冰箱分几步？</h2>
+    <ol>
+        <li>把冰箱门打开</li>
+        <li>把大象放进去</li>
+        <li>把冰箱门关上</li>
+        <li><a href="www.baidu.com">去百度</a></li>
+    </ol>
+    <!-- 3.列表可以嵌套使用 -->
+    <h2>我想去的几个城市有</h2>
+    <ul>
+        <li>tokyo</li>
+        <li>
+            <span>shanghai</span>
+            <ul>
+                <li>外滩</li>
+                <li>
+                    <span>东方明珠</span>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </li>
+                <li>迪士尼乐园</li>
+            </ul>
+        </li>
+        <li>wuhan</li>
+    </ul>
+    
+    <h2>如何更好地学习</h2>
+    <!-- 4.自定义列表一个dt可以有多个dd -->
+    <dl>
+        <dt>做好笔记</dt>
+        <dd>笔记是我们以后复习的抓手</dd>
+        <dd>笔记加强记忆深度</dd>
+        <dt>多加练习</dt>
+        <dd>只有敲出来的代码才是自己的</dd>
+        <dt>不怕出错</dt>
+        <dd>错误很正常</dd>
+    </dl>
+</body>
+</html>

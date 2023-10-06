@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单_禁用控件</title>
+</head>
+<body>
+    <!-- 这个网站用作观察提交表单用 -->
+    <form action="https://search.jd.com/search">
+        <!-- 文本输入框 -->
+        account: <input disabled type="text" name="account" value="zhangsan" maxlength="10"><br>
+        <!-- 密码输入框 -->
+        password: <input type="password" name="pwd" value="123" maxlength="6"><br>
+        <!-- 单选按钮 -->
+        <!-- 对普通输入框可以不写value默认值，但是对单选框来说必须写value -->
+        gender: 
+        <input type="radio" name="gender" value="male">男 
+        <input type="radio" name="gender" value="female" checked>女
+        <br>
+        <!-- 多选按钮 -->
+        hobby:
+        <input type="checkbox" name="hobby" value="smoking" checked>抽烟
+        <input type="checkbox" name="hobby" value="drinking" checked>喝酒
+        <input type="checkbox" name="hobby" value="dacing" checked>跳舞
+        <br>
+        <!-- 文本域 -->
+        other：
+        <textarea name="other" cols="10" rows="3"></textarea>
+        <br>
+        <!-- 籍贯 -->
+        from:
+        <select name="place">
+            <option value="鄂" selected>Hubei</option>
+            <option value="鲁">Shandong</option>
+            <option value="冀">Hebei</option>
+        </select>
+        <!-- 隐藏域，用于防止非法注册 ？-->
+        <input type="hidden" name="from" value="toutiao">
+        <br>
+
+
+
+        <!-- submit1，button在表单中的默认type是submit -->
+        <!-- <button>确认</button> -->
+        <!-- submit2 -->
+        <!-- input框除了submit之外都应该尽量写name -->
+        <input type="submit" value="确认">
+
+        <!-- reset1 -->
+        <!-- <button type="reset">重置</button> -->
+        <!-- reset2 -->
+        <input type="reset" value="点我重置">
+
+        <!-- 普通的不重置也不提交的按钮1 -->
+        <!-- <button type="button">检测账户是否被注册</button> -->
+        <!-- 普通按钮2 -->
+        <input type="button" value="查询账户是否被注册">
+    </form>
+</body>
+</html>
