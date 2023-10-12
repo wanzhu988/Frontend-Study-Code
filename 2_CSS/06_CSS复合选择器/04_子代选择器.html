@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子代选择器</title>
+    <style>
+        /* 选中div的儿子a */
+        div>a {
+            color: red;
+        }
+        /* 选中div的儿子p的儿子a */
+        div>p>a {
+            color: skyblue;
+        }
+        .foot>a {
+            color: black;
+        }
+        /* 不写类名写id为foot，则使用#foot>a；div .foot>a；div.foot>a； */
+        /* div>p>div>a {
+            color: blue;
+        } */
+        /* 这种多层嵌套写法不行，不起作用 */
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">张三</a>
+        <a href="#">李四</a>
+        <a href="#">王五</a>
+        <p>
+            <a href="#">赵六</a>
+            <div class="foot">
+                <a href="#">孙七</a>
+            </div>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后代选择器</title>
+    <style>
+        /* 可以自由包含多种选择器嵌套 */
+        ul li {
+            color: red;
+        }
+        /* 选中ul里的所有li子元素 */
+        /* 选中指定元素中符合要求的后代元素 */
+        ol li {
+            color: green;
+        }
+        ul li a {
+            color: aqua;
+        }
+        ol li a {
+            color: brown;
+        }
+        .subject li {
+            color: blue;
+        }
+        .subject #frontend {
+            font-size: 40px;
+        }
+        .subject li.backend,
+        .subject #client {
+            font-size: 80px;
+        }
+        .subject div.backend {
+            color: orchid;
+        }
+        /* p h2 {
+            color: red;
+        } */
+        /* p标签不能包含h2，不存在此种嵌套，不符合HTML嵌套要求 */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>smoking</li>
+        <li>drinking</li>
+        <li>dancing</li>
+        <li>
+            <a href="#">surfing</a>
+        </li>
+        <div>
+            <li>hiking</li>
+        </div>
+    </ul>
+    <hr>
+    <ol>
+        <li>zhangsan</li>
+        <li>lisi</li>
+        <li>wangwu</li>
+        <li>
+            <a href="#">zhaoliu</a>
+        </li>
+    </ol>
+    <ol class="subject">
+        <li id="frontend">前端</li>
+        <li class="backend">后端</li>
+        <div class="backend">学好后端，挂帅扬帆</div>
+        <li id="client">客户端</li>
+    </ol>
+    <p>
+        <h2>Hallo</h2>
+    </p>
+</body>
+</html>

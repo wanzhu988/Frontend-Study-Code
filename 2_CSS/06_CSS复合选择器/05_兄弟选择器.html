@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟选择器</title>
+    <style>
+        /* div+p {
+            color: red;
+        } */
+        /* 找到和div下面仅有一个的兄弟p元素，
+        如果div和p中间隔了别的元素也无效 */
+        div~p {
+            color: lawngreen;
+        }
+        /* div下面所有的p标签兄弟都被找到（用li~li也可行） */
+        li+li {
+            color: red;
+        }
+        /* 这些都可以用通用选择器进行组合 */
+    </style>
+</head>
+<body>
+    <div>尚硅谷</div>
+    <p>前端</p>
+    <p>Java</p>
+    <p>大数据</p>
+    <p>UI</p>
+
+    <Ul>
+        <li>秒杀</li>
+        <li>订单</li>
+        <li>我的</li>
+        <li>主页</li>
+    </Ul>
+    <!-- 应用场景：列表中排除第一个
+        怎么快速让秒杀下面的所有的都变成红色而秒杀自己不变色 -->
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器_动态伪类</title>
+    <style>
+        a:link {
+            color: red;
+        }
+        a:visited {
+            color: grey;
+        }
+        /* 选中的是鼠标悬浮状态的a元素 */
+        a:hover {
+            color: skyblue;
+        }
+        /* 选中的是鼠标按下不动状态（激活状态）的a元素 */
+        a:active {
+            color: green;
+        } 
+        /* 这四个必须按顺序出现，不然颜色会被覆盖：
+        标准顺序lvha：link-visited-hover-active */
+
+        /* link和visited是a标签独有的，hover和active是所有的标签都有的状态 */
+        span:hover {
+            color: brown;
+        }
+        span:active {
+            color: black;
+        }
+
+        /* 表单类元素：获取焦点，点到这个框的时候才变色 */
+        input:focus, select:focus {
+            color: yellow;
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.youtube.com">去油管</a>
+    <a href="https://www.4399.com">去4399</a>
+    <span>尚硅谷</span>
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">    
+    <br>
+    <input type="text">
+
+    <br>
+    <select>
+        <option value="beijing">北京</option>
+        <option value="wuhan">武汉</option>
+    </select>
+</body>
+</html>

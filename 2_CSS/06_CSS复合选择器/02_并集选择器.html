@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>并集选择器</title>
+    <style>
+        .rich {
+            color: gold;
+            font-size: 40px;
+            background-color: beige;
+            width: 300px;
+        }
+        .star {
+            color: red;
+        }
+        .dog {
+            color: black;
+        }
+        .cat {
+            color: blueviolet;
+        }
+        .rich, 
+        .cat, 
+        .star, 
+        .dog,
+        #suxi {
+            font-size: 40px;
+            background-color: beige;
+            width: 300px;
+        }
+        /* 任何形式的选择器都可以作为并集选择器的一部分，一般竖着写 */
+        /* 也可以给这些类加上另一个类名，再对另一个类名进行类选择器定义 */
+    </style>
+</head>
+<body>
+    <h2 class="rich">rich zhangsan</h2>
+    <h2 class="star">star lisi</h2>
+    <h2>poor wangwu</h2>
+    <hr>
+    <p class="dog">dog miffy</p>
+    <p class="cat">cat meme</p>
+    <p id="suxi">sheep suxi</p>
+</body>
+</html>

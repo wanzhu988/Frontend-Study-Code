@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器_概念</title>
+    <style>
+        /* 伪类很像类但不是类，是元素特殊状态的一种描述 */
+        
+        a:link {
+            color: red;
+        }
+        /* 选中的是没有访问过的a元素 */
+        a:visited {
+            color: grey;
+        }
+        /* 选中的是访问过的a元素 */
+    </style>
+</head>
+<body>
+    <!-- 需求：没有访问过的网页标签变成红色 -->
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.youtube.com">去油管</a>
+    <a href="https://www.4399.com">去4399</a>
+</body>
+</html>

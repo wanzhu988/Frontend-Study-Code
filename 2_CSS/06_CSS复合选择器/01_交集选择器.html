@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交集选择器</title>
+    <style>
+        .rich {
+            color: gold;
+        }
+        .star {
+            color: red;
+        }
+        /* 选中p元素且类名为star的标签，这种用得最多 */
+        p.star {
+            color: aquamarine;
+        }
+        /* 三重交集，p+star+idmf，一般用不着，直接用id选择器即可 */
+        /* p.star#mf {
+            font-size: 40px;
+        } */
+        /* 也可以用两个类名形成交集，用得比较少 */
+        .rich.star {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="rich">rich zhangsan</h2>
+    <h2 class="star">star lisi</h2>
+    <h2 class="rich star">rich star wangwu</h2>
+    <hr>
+    <p class="star" id="mf">dog miffy</p>
+    <p class="starcat">cat meme</p>
+</body>
+</html>

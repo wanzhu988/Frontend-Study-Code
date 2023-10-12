@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位置3_外部样式</title>
+    <!-- 在head中使用link关联到专属的css stylesheet，可以多个html关联到同一个css文件 -->
+    <!-- 这种关联可以触发浏览器的缓存机制，使用同一个.css文件的html文件可以使用缓存 -->
+    <!-- 实现了结构与样式的完全分离 -->
+    <!-- rel说明了引入文档与当前文档之间的关系 -->
+    <link rel="stylesheet" href="position3.css">
+</head>
+<!-- 规范来说，style标签写在head里面，CSS代码写到head标签里的style标签中-->
+<!-- 没有实现结构和样式的完全分离，多个HTML页面无法复用样式 -->
+<body>
+    <h1>欢迎来到尚硅谷学习</h1>
+    <h2>欢迎学习前端</h2>
+    <h2>不想学习不想学习不想学习</h2>
+    <p>北京欢迎你</p>
+    <p>上海欢迎你</p>
+    <p>武汉欢迎你</p>
+    <img src="../images/小姐姐.gif" alt="小姐姐">
+</body>
+</html>

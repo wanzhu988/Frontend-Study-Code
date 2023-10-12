@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器_结构伪类3</title>
+    <style>
+        /* 见结构一 */
+        /* div>p:nth-of-type(5) {
+            color: red;
+        } */
+        /* 选中div中倒数第n个的儿子+p元素(结构一)（按照所有兄弟） */
+        /* div>p:nth-last-child(3) {
+            color: red;
+        } */
+        /* 选中div中倒数第n个的儿子p元素(结构一) （按照所有同类型兄弟） */
+        /* div>p:nth-last-of-type(2) {
+            color: red;
+        } */
+
+        /* 见结构二 */
+        /* 选中是没有兄弟，独生子女的span元素 */
+        /* span:only-child {
+            color: red;
+        } */
+        /* 选中没有同类型兄弟的span元素 */
+        /* span:only-of-type {
+            color: red;
+        } */
+        /* 等于html{}，代表选中html根元素，整个页面 */
+        /* :root {
+            background-color: gray;
+        } */
+
+        /* 见结构三 */
+        /* 选中的是没有内容的div元素（连空格都不能有） */
+        div:empty {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 结构一 -->
+    <!-- <div>
+        <span>测试1</span>
+        <p>张三：99分</p>
+        <p>李四：98分</p>
+        <p>王五：78分</p>
+        <p>赵六：66分</p>
+        <p>孙七：58分</p>
+        <p>老八：46分</p>
+        <span>测试2</span>
+    </div> -->
+
+    <!-- 结构二 -->
+    <!-- <div>
+        <span>测试1</span>
+    </div>
+    <div>
+        <span>测试2</span>
+        <p>张三：99分</p>
+        <p>李四：98分</p>
+        <p>王五：78分</p>
+        <p>赵六：66分</p>
+        <p>孙七：58分</p>
+        <p>老八：46分</p>
+    </div> -->
+
+    <!-- 结构三 -->
+    <div></div>
+
+</body>
+</html>
