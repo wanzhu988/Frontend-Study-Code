@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器_UI伪类</title>
+    <style>
+        /* 选中的是勾选的复选框或者单选按钮，没选中时候恢复原样 */
+        input:focus {
+            width: 100px;
+            height: 100px;
+            /* background-color: aqua;
+            color: red; */
+            /* 对复选框和单选按钮，不是所有样式都能调，无法改变颜色和背景色 */
+        }
+        /* focus不管是任意操作都会变化 */
+
+        /* 选中的是被禁用的input元素 */
+        input:disabled {
+            background-color: gray;
+        }
+
+        /* 选中的是可用的input元素，：enabled可以省略，这个用得不多 */
+        input:enabled {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox">
+
+    <input type="radio" name="gender">
+    <input type="radio" name="gender2">
+
+    <input type="text">
+    <input type="text" disabled>
+</body>
+</html>

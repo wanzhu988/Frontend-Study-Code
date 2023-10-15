@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器优先级-简单</title>
+    <style>
+        /* 行内样式 > id选择器100 > 类选择器010
+         > 元素选择器001 > 通配选择器000 */
+        #atguigu {
+            color: black;
+        }
+        .slogen {
+            color: aqua;
+        }
+        h2 {
+            color: red;
+        }
+        * {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="slogen" id="atguigu">尚硅谷，让天下没有难学的技术</h2>
+</body>
+</html>

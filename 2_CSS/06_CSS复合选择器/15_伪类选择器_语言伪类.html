@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_伪类选择器_语言伪类</title>
+    <style>
+        div:lang(en) {
+            color: red;
+        }
+        /* 选中是英文属性的div，即使div包裹的是中文也不管 */
+
+        :lang(zh-CN) {
+            color: green;
+        }
+        /* 选中所有lang属性为zh-CN的元素 */
+        
+        [lang="en"] {
+            background-color: aqua;
+        }
+        /* 属性选择器也可以用 */
+    </style>
+</head>
+<body>
+    <div>尚硅谷</div>
+    <div lang="en">中文</div>
+    <p>前端</p>
+    <span>你好</span>
+</body>
+</html>

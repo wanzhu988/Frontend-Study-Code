@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS的编写位置</title>
+    <!-- 1.编写到网页头部内部的script标签 -->
+    <!-- <script type="text/javascript">
+        alert('哈哈')
+    </script> -->
+
+    <!-- 2.可以把js编写到外部的js文件中，然后用script引入到当前html文件 -->
+    <!-- 单个script标签要么引入外部文件，要么写内部代码，不可以同时兼具 -->
+    <!-- <script src="./script/script.js"></script> -->
+</head>
+<body>
+    <!-- 3.可以把js代码编写到指定的属性中 -->
+    <!-- 外面用双引号，里面就要用单引号 -->
+    <button onclick="alert('你点我干嘛？')">点我一下</button>
+    
+    <hr>
+    <a href="javascript:alert(123)">超链接</a>
+    <hr>
+    <a href="javascript:;">超链接</a>
+</body>
+</html>

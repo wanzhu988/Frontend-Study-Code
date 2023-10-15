@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_伪类选择器_伪元素选择器</title>
+    <style>
+        /* 之前学的选择器最终落在整个元素身上，这个选择器落在元素内容身上 */
+        /* 很像元素但不是元素，是元素中的一些特殊位置 */
+        /* 选中div中的第一个文字 */
+        /* 一个冒号也可以，属于CCSS2内容，最好按照css3使用俩冒号 */
+        div::first-letter {
+            color: red;
+            font-size: 40px;
+        }
+        /* 选中div中的第一行 */
+        div::first-line {
+            background-color: yellow;
+        }
+        /* 选中的是div中被鼠标选择的文字 */
+        div::selection {
+            background-color: green;
+            color: orange;
+        }
+        /* 选中的是input中的提示文字 */
+        input::placeholder {
+            background-color: skyblue;
+        }
+        /* 选中的是p元素最开始的位置，随后创建一个子元素 */
+        p::before {
+            content: "$";
+            color: red;
+        }
+        /* 选中的是p元素最后的位置，随后创建一个子元素 */
+        p::after {
+            content: ".00";
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit saepe quisquam quae quia placeat facilis nisi veritatis vitae asperiores. Dolore non repudiandae rerum aliquid officiis repellat voluptatum animi autem perspiciatis natus, sit aspernatur alias fugit magnam facilis perferendis. Minus cumque dignissimos earum commodi, dicta quae. Adipisci impedit, facere quas sunt aliquam quaerat incidunt debitis cum natus provident reprehenderit ipsa nesciunt.</div>
+    <!-- 需求：选中div里面的第一个文字L -->
+    <br>
+    <input type="text" placeholder="请输入您的用户名">
+    <p>199</p>
+    <p>299</p>
+    <p>399</p>
+    <p>499</p>
+</body>
+</html>
