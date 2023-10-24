@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_类型转换-布尔值</title>
+    <script>
+        /* 使用boolean函数进行转换
+           转换的情况：
+           -数字：除了0和NaN是false，其余都为ture
+           -字符串： 除了空串是false其余都是true
+           -null和undefined都转换为false
+           -对象都会转换为true
+           
+           -所有表示空的、没有的、错误的（0，NaN，空串，null，undefined）都转换为false
+           -JS是弱类型语言，经常会遇到转换的使用*/
+        let a = 1
+        a = -1 // true
+        a = 0 // false
+        a = NaN //false
+        a = Infinity //ture
+
+        a = "abc" // true
+        a = "true" //true
+        a = "false" // true
+        a = "" //false
+        a = " " //ture
+
+        a = Boolean(a) // 赋值主要是为了看到结果
+        console.log(typeof a, a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

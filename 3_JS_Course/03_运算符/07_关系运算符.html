@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系运算符</title>
+    <script>
+        /* 用来检查两个值之间的关系是否成立，成立返回true，否则返回false
+            > 
+            >=
+            <
+            <= 
+            对非数值进行关系运算时，会先将其转换为数值然后再比较
+            当比较的是两个字符串，即使是字符串格式的数字，也不转换为数值，
+            而是一位位比较字符的Unicode编码
+                利用这个特点可以对字符串按照字母排序
+
+        */
+       let a = 10 > 5
+       a = 5 < "10" //true
+       a = "1" > false //true
+
+       a = "a" < "b" //true （字母字符串转数字会变成NaN）
+       a = "z" < "f" //false
+       a = "abc" < "b"//true，一位位比较，第一位分出胜负，就不比后面的了
+
+       a = "12" < "2" //true，因为是两个字符串，所以比较第一位的1和2
+       a = +12 < "2" //false， 因为通过一元运算符已经把左边转换为数字了
+
+       //检查值是否在5和10之间
+       let num = 60
+       b = 5 < num < 10 //返回true，因为先计算左边得结果true，右边变成计算true < 10即1 < 10
+       c = 5 < num && num < 10 //正确写法
+
+
+       console.log(a)
+       console.log(c)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

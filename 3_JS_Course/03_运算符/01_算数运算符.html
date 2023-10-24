@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算数运算符</title>
+    <script>
+        /* operator
+           + - * / 注意JS中的/并不是整除，会出现小数
+           ** 幂运算
+           % 模运算(两个数相除取余数)
+           
+           算术运算时，除了字符串的加法，都会转换为数值然后再运算*/
+        let a = 1 + 1
+        a = 10 / 3
+        a = 10 / 0 //得到infinity结果
+        a = 10 ** 2 //10的2次方
+        a = 9 ** .5 //9开方
+        a = 10 % 3
+
+        /* JS是弱类型语言，运算时会通过自动的类型转换来完成运算 */
+        a = 10 - "5" //自动把字符串5转化为数字5
+        a = 10 + true //10 + 1
+        a = 5 + null //5 + 0
+        a = 6 - undefined //6 - NaN，得到的结果是NaN
+
+        /* 当任意值和字符串做加法运算时，
+        -先将其他值转换为字符串，再做拼串操作
+        -只有加法是例外，其他的都是字符串转换成数字
+        -发生隐式类型转换，可以用来做类型转换（直接加一个空串）
+        -原理和String()函数相同 */
+        a = 1 + "2" //"1" + "2"
+        a = true
+        a = a + "" //一般加上一个空串就可以直接转换成字符串
+
+        console.log(typeof a, a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

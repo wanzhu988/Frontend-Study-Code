@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch语句</title>
+    <script>
+        /* switch(表达式){
+            case 表达式:
+                代码...
+                break
+            case 表达式:
+                代码...
+                break
+            default:
+                代码...
+            }
+            执行时依次把switch后的表达式和case后的表达式进行全等比较（注意是全等比较！！）
+                如果比较结果为true，则从当前case处开始执行代码，
+                后面的case不管有没有匹配上都会执行（与if对比，不止执行一个代码块）
+                一般用break来避免执行这种情况
+                
+                default的功能和if里面最后的else一样
+                
+                switch和if的不同只在于switch在多个全等判断时，结构更清晰*/
+        let num = +prompt("请输入一个数字")
+        switch(num) {
+            case 1:
+                alert("1")
+                break
+            case 2:
+                alert("2")
+                break
+            case 3:
+                alert("3")
+                break
+            default: 
+                alert("类似于if里面的else")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

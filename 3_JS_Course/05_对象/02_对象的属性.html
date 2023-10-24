@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的属性</title>
+    <script>
+        /*
+            属性名可以是任何值，一般没有特殊要求
+            如果太特殊了则需要用中括号[]引起来使用
+            一般属性名还是按照标识符规范命名
+
+            也可以使用symbol作为属性名，获取这种属性时也必须使用symbol
+            使用这种方式的属性一般是不希望被外界访问的属性
+
+            对象的属性值可以是任意的数据类型，也可以是一个对象
+            使用typeof检查对象返回object
+         */
+        let obj = Object()
+        obj.name = "孙悟空"
+
+        let mySymbol = Symbol()
+        let newSymbol = Symbol()
+        obj[mySymbol] = "通过symbol添加的属性"
+
+        console.log(obj[mySymbol])
+        // console.log(obj[newSymbol]) 访问不到，显示undefined
+
+        // 三种添加三种读取
+        // 使用点操作属性时不能使用变量，传的是点后面的值
+        obj.age = 18 //添加属性age
+        obj["gender"] = "male" //添加属性gender
+        console.log(obj.gender);
+        console.log(obj["gender"]);
+
+        //使用中括号操作属性时，可以使用变量，传的是变量值而不是变量名
+        let str = "address" //添加属性address
+        obj[str] = "huaguoshan"
+        console.log(obj[str]);
+
+        obj.f = Object()
+        console.log(obj);
+        obj.f.name = "zhubajie"
+        obj.f.gender = "female"
+        console.log(obj.f);
+        console.log(obj.f.name);
+
+        // in运算符用来检查对象中是否有某个属性，如果有，返回true，没有则返回false
+        console.log("name" in obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

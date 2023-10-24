@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <script>
+        /* ! 对布尔值进行取反；对非布尔值先转换成布尔值再取反
+           可以利用这个特点把其他值转换成布尔值（取两次反）
+           &&
+           ||
+           类型转换总结
+           转字符串：显式-String函数 隐式-和空串相加 
+           转数值：显式-Number函数 隐式-一元加（就是直接给原数据加上正负号没有其他运算！ 
+           转布尔值：显式-Boolean函数 隐式-两次非运算 */
+        let a = NaN
+        a = !a
+        let b = 123
+        b = !!b //等价于b = Boolean(b)
+        console.log(b)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

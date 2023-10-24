@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数值</title>
+    <script>
+        /* 数值-Number
+           -在JS中所有的整数和浮点数都是Number类型
+           -JS中数字大小有限，超出则显示近似值（）
+           -JS中进行精度高的运算需要小心
+           -Infinity特殊数值表示无穷，如9999的自幂
+           -NaN特殊数值表示一个非法数字（Not a number），如1-a
+           特殊数值的出现是为了符合JS语言早期设计初衷中不报错的需求，
+           但是也要避免出现这些（现在看到会报错的部分，一般就都是后期加上的特性） */
+        /* 大整数-BigInt
+           -用来表示一些比较大的整数，这种就在内存内没有大小上限
+           -使用n结尾*/
+           a = 999999999999999999999999999999999999999999999n
+           console.log(typeof a)
+        /* 其他进制的数字：
+           -二进制：0b
+           -八进制：0o
+           -十六进制：0x
+           但是输出的时候都会十进制显示 */
+           a = 0b1010
+           console.log(a)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

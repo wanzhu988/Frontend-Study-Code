@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <script>
+        /* 
+           && -对两个值进行与运算，左右都为true时返回true
+              -是短路的与，如果第一个值为false则不看第二个值
+              -与运算是找false的，如果找到false则直接返回，没有false返回true
+              -非布尔值进行运算时，先转换为布尔值然后再运算，最终返回原类型值
+                 -如果第一个值为false，则直接返回第一个值
+                 -如果第一个值为true，则返回第二个值(无论是什么值)
+           || -对俩值进行或运算，左右有true时返回true，否则返回false
+              -是短路的或，如果第一个值为true则不看第二个值
+              -或运算是找true的，如果找到true则直接返回，没有true返回false
+              -非布尔值进行运算时，先转换为布尔值然后再运算，最终返回原类型值
+                 -如果第一个值为true，则直接返回第一个值
+                 -如果第一个值为false，则返回第二个值(无论是什么值)
+            */
+        // a = false && alert(123) //不执行该alert函数
+        let a = 1 && 2 //第一个值为true，返回第二个值2
+        a = 1 && 0 //返回0
+        a = 0 && NaN //第一个值为false，返回0
+
+        a = true || false
+        a = false || false
+
+        a = 8 || 1 //返回8
+        a = 0 || "hello" //返回hello
+        a = NaN || null //返回null
+
+        // true || alert(123) 第一个值为true，第二个值不会执行
+        console.log(a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

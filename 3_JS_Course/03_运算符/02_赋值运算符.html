@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赋值运算符</title>
+    <script>
+        /* += -+ *= /= %= **=
+           =是赋值；??= 是空赋值
+           空赋值：只有当变量的值为null或者undefined时才会对变量进行赋值(NaN也不赋值) */
+        let a = 10
+        let b = a //变量只有在等号左边时才是变量，在等号右边时是值
+
+        a = 66
+        a + 11 //算完没有进行赋值，a的值不变（大部分运算符在没有赋值的情况下不改变变量的值
+
+        a = 5
+        a += 5 // a = a + 5
+        a **= 2 // a = a ** 2
+
+        // a = null
+        a ??= 101 //a在前面已经有赋值了，所以赋值失败，a依然是10
+
+        console.log(a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

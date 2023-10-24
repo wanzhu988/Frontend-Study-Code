@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_类型转换-数字</title>
+    <script>
+        /* 其他类型转换到数值类型：
+           1.使用Number()函数把其他类型转换为数值
+             转换的情况：
+             -字符串
+                -字符串是合法数字-转换成对应数字
+                -字符串不是合法数字是字母等其他-转换成NaN
+                -字符串是空串或者纯空格字符串-转换成0
+            -boolean
+                -true-1,false-0
+            -null - 0
+            -undefined - NaN
+                
+           2.专用于字符串转数值的两种方法
+           parseInt()字符串转整数:解析时会自左向右读取一个字符串，直到读取完所有有效整数
+           如果第一个字符不是有效整数，则和number函数一样无法读取；并且不会读取小数位
+           如果用的对象不是字符串，会先将其转换成字符串再解析成数字，所以可以用于小数取整
+           parseFloat()字符串转浮点数，解析时会自左向右读取一个字符串，直到读取完所有有效小数 */
+        let a = "123" //123
+        a = "abc" //null
+        a =  "11px" //NaN
+        a = " " //0
+        a = "    "//0
+
+        a = true //1
+        a = false //0
+
+        let b = null
+        b = Number(b)
+        console.log(typeof b, b)
+
+        let c = "123px"
+        d = 456.124
+        console.log(typeof c, c)
+        c = parseInt(c)
+        d = parseInt(d)
+        console.log(typeof c, c)
+        console.log(typeof d, d)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

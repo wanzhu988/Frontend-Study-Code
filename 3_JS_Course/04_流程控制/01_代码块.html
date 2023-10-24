@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码块</title>
+    <script>
+        /*
+            使用{}来创建代码块对代码进行分组
+            一个代码块中的代码要么都执行要么都不执行
+            let和var
+                -在JS中，用let声明的变量具有块作用域
+                    在代码块中声明的变量无法在代码块的外部访问
+                -使用var声明的变量不具有块作用域
+         */
+        {
+            let a = 10 //如果使用var来定义则可让下一块访问
+            {
+                console.log(a)//这种就可以访问a，因为都在一个大块内部
+            }
+            alert(123)
+        }
+        
+        {
+            console.log("haha") //访问不到上个块里面定义的a
+            document.write("xixi")
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

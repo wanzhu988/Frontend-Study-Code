@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串</title>
+    <script>
+        /* JS使用单引号或者双引号来表示字符串，要统一选择一种，不能混着用
+           转义字符-反斜杠\
+           \t = 制表符
+           \n = 换行 */
+        let a = "Hello"
+        a = "nihao"
+        a = "这是一个\”字符串"
+        a = "这是一个\\字符串"
+        a = "这是一个\\\\字符串" //输出两个//
+        a = "呵呵\t哈哈哈" //相当于按了一个tab键
+        a = "呵呵\n哈哈哈" //相当于换行
+
+        /* 模板字符串：可以回车跨行使用，并且可以嵌入变量
+           -使用反单引号`来表示模板字符串 */
+        a = `今天天气
+        真
+        不
+        错`
+        let name = "孙悟空"
+        let str = "你好"
+        a = `${str}, ${name}`
+        console.log(a)
+        b = 10
+        console.log(`b = ${b}`)
+        let c = "5"
+        c = `aaa`
+        console.log(typeof c)
+        // 不管是普通字符串候还是模板字符串，类型检查出的都是string
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

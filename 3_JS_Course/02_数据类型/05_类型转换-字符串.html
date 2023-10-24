@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_类型转换-字符串</title>
+    <script>
+        let a = 10 //"10"
+        a = true //"true"
+        a = 11n //"11"
+        //a = null - null和undefinded没有toString功能，调用时会报错
+        console.log(typeof a, a)
+        a = a.toString() //因为原始值类型不可变，所以根据a的值创建一个新的字符串值
+        console.log(typeof a, a)
+
+        /* 字符串、数值、boolean值转换 其实不是真的把值改变了，而是创建了对应转化类型的新值
+           强制（显式）类型转换字符串：
+           1.调用a.toString()方法将其他类型转换为字符串
+           2.调用String()函数将其他类型转换为字符串
+           拥有toString方法的原始值类型调用String函数就是在调用toString函数
+           不拥有toString方法的原始值类型null和undefined直接转换成对应的字符串
+           String函数应用范围更广一点  */
+
+        let b = 33 //"33"
+        b = null //String函数就可以适用于null和undefined类型
+        console.log(typeof b, b)
+
+        b = String(b) //原理同上
+        console.log(typeof b, b)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
