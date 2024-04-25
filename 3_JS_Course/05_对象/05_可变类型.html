@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可变类型</title>
+    <script>
+        /* 原始值是不可变类型，一旦创建无法修改，内存中不会创建重复的原始值
+           对象是可变类型(支持对属性的修改)
+            如果有俩变量同时指向一个对象，通过一个变量改变对象时对另一个变量也产生影响
+            对两个对象进行相等或全等比较时，比较的是对象的内存地址
+        */
+       let obj = Object()
+       obj.name = "swk"
+       console.log(obj);
+
+       let obj4 = obj
+       obj4.name = "zhubajie"
+       console.log("obj", obj);
+       console.log("obj4", obj4);
+       console.log(obj == obj4);
+
+       let obj2 = Object()
+       let obj3 = obj2   //这种比较不报错，指向同一个内存地址
+    //    let obj3 = Object() 比较会报错
+       console.log(obj2 == obj3)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

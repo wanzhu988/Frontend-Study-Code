@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象作为参数</title>
+    <script>
+        function fn(a){
+            // console.log("a=", a);
+            a = {} // 这里让a指向了一个新对象，这里的修改就不会影响obj了
+            a.name = "zhubajie"
+            console.log(a);
+        }
+        // fn(123)
+
+        let obj = {name:"sunwukong"}
+        // 传递实参时，传递的不是变量本身，而是变量中存储的值
+        // 调用函数传参后，a和obj都指向同一个对象，通过a对对象进行修改也会影响obj
+        fn(obj)
+        console.log(obj.name);
+
+        // 函数每次调用都会重新创建默认值
+        function fn2(a = {name:"shaheshang"}){
+            console.log("a=", a);
+            a.name = "tangsen"
+            console.log("a=", a);
+        }
+        fn2()
+        fn2()
+
+        // 这种就是共用的同一个对象
+        let obj2 = {name:"沙和尚"}
+        function fn3(a = obj2){
+            console.log("a=", a);
+            a.name = "tangsen"
+            console.log("a=", a);
+        }
+        fn3()
+        fn3()
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

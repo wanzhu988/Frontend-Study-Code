@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>03_对象的字面量</title>
-    
+    <script>
+        /* 可以直接使用大括号来创建对象，更方便
+        */
+        let obj = Object()
+        console.log(obj);
+        // sample
+        let mySymbol = Symbol()
+        let obj2 = {
+            gender:"male", 
+            age:18,
+            ["address"]:"huaguoshan",
+            [mySymbol]:"特殊属性",
+            hello: {
+                hello1: "hello1"
+            }
+        }
+        obj2.name = "sunwukong"
+        console.log(obj2);
+
+    </script>
 </head>
 <body>
     

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表相关属性</title>
+    <style>
+        ul{
+            /* list-style-type: none;
+            /* list的符号，一般设置为none，可选square,lower/upper roman/decimal */  
+            
+            /* list-style-position: inside;
+            /* list符号的位置是在列表里面还是外面 */
+
+            /* list-style-image: url("../images/satoru.png");
+            自定义列表符号 */ 
+
+            list-style: url("../images/satoru.png") decimal inside;
+            /* 复合上面所有三个属性，前后顺序不影响 */
+            /* 可以用在ul，ol，li元素上 */
+        }
+        li {
+            background-color: aqua;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="www.baidu.com">《caption》</a>
+        </li>
+        <li>《rich tutor》</li>
+        <li>《satoru》</li>
+    </ul>
+</body>
+</html>

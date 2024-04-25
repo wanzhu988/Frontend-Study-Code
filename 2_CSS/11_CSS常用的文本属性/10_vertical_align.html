@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_vertical_align</title>
+    <style>
+        div {
+            font-size: 100px;
+            background-color: skyblue;
+            height: 300px;
+        }
+        span {
+            font-size: 40px;
+            background-color: orange;
+            vertical-align: middle;
+        }
+        /* 控制元素在其那一行的垂直对齐方式top, bottom, baseline, middle，默认为baseline基线对齐*/
+
+        img {
+            height: 200px;
+            vertical-align: top;
+        }
+        /* 当图片的高度大于行文字的高度的时候，调节va会让字体进行上下位置变动 */
+
+        .test {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            /* vertical-align: bottom; */
+        }
+        /* 这种va调节没有效果，因为它不是父元素里面的子元素 */
+
+        .test2 {
+            width: 400px;
+            height: 400px;
+            background-color: blueviolet;
+        }
+        .test3 {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            /* vertical-align: bottom; */
+        }
+        /* va也无法调节div这样的块级元素，只能操作同一行行内元素 */
+        
+        .Alice {
+            vertical-align: top;
+        }
+        /* 以及可以用在单元格上 */
+    </style>
+</head>
+<body>
+    <div>atguigux尚硅谷x<span>x前端</span>让天下没有难学的技术</div>
+    <hr>
+    <div>atguigux尚硅谷x<img src="../images/4.jpg"></div>
+    <hr>
+    <div class="test">123</div>
+    <hr>
+    <div class="test2">
+        <div class="test3"></div>
+    </div>
+    <hr>
+    <table border="1" cellspacing="0">
+        <caption>人员信息</caption>
+        <thead>
+            <th>name</th>
+            <th>sex</th>
+            <th>age</th>
+        </thead>
+
+        <tbody>
+            <tr height=200px>
+                <!-- <td valign="top">Alice</td> -->
+                <td class="Alice">Alice</td>
+                <td>Female</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Male</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
