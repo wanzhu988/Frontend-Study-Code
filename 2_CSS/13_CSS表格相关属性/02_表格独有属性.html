@@ -6,30 +6,41 @@
     <title>02_表格独有属性</title>
     <style>
         table {
-            /* border-width: 2px; */
-            /* border-color: green; */
-            /* border-style: solid; */
             border: 2px green solid;
+            width: 500px;
+
+            /* table列宽控制 */
+            table-layout: auto;
+
+            /* table单元格间距（html用cellspacing控制） */
+            border-spacing: 0px;
+
+            /* 合并相邻单元格的边框，一旦合并了边框，则单元格间距失效 */
+            border-collapse: collapse;
+
+            /* 隐藏没有内容的单元格，一旦合并了边框就看不出来*/
+            empty-cells: hide;
+
+            /* 设置表格标题位置 */
+            caption-side: top;
+
         }
         td,th {
-            border: 2px green solid;
+            border: 2px orange solid;
         }
-        h2 {
-            border: 2px green solid;
+        .number {
+            width: 50px;
+            height: 50px;
         }
-        span {
-            border: 2px green solid;
-        }
+
     </style>
 </head>
 <body>
-    <h2>边框相关属性，其他元素也能用</h2>
-    <span>边框相关属性，其他元素也能用</span>
     <table>
         <caption>information</caption>
         <thead>
             <tr>
-                <th>No.</th>
+                <th class="number">No.</th>
                 <th>name</th>
                 <th>age</th>
                 <th>sex</th>
@@ -42,7 +53,7 @@
                 <td>Alice</td>
                 <td>18</td>
                 <td>female</td>
-                <td>yes</td>
+                <td></td>
             </tr>
             <tr>
                 <td>2</td>
