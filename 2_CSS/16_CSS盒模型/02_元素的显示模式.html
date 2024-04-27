@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_元素的显示模式</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: gainsboro;
+        }
+        #d1 {
+            background-color: aliceblue;
+        }
+        #d2 {
+            background-color: green;
+        }
+        #d3 {
+            background-color: pink;
+        }
+        #d4 {
+            background-color: yellow;
+        }
+
+        #s1 {
+            background-color: aliceblue;
+        }
+        #s2 {
+            background-color: green;
+        }
+        #s3 {
+            background-color: pink;
+        }
+        
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- block元素 -->
+    <!-- 独占一行，不会和任何元素公用一行 -->
+    <!-- 默认的宽度是充满整个父元素的，默认的高度是由内容撑开的（多了换行呗） -->
+    <!-- 可以通过CSS设置宽高 -->
+    <div id="d1">风</div>789
+    <div id="d2">花</div>
+    <div id="d3">雪</div>
+    <div id="d4">月</div>
+
+    <!-- inline行内元素 -->
+    <!-- 不独占一行，多个元素可以在同一行从左到右排列，一行放不下就另起一行 -->
+    <!-- 默认宽度和高度都由内容撑开 -->   
+    <!-- 无法通过CSS设置宽高 -->
+    <span id="s1">sa</span>
+    <span id="s2">to</span>
+    <span id="s3">ru</span>
+    <hr>
+    <!-- inline-block行内块元素 -->
+    <!-- inline：不独占一行，默认宽度和高度都由内容撑开-->
+    <!-- block：可以通过CSS设置宽高-->
+    <img src="../images/satoru.png" alt="satoru">
+    <img src="../images/satoru.png" alt="satoru">
+    <img src="../images/satoru.png" alt="satoru">
+</body>
+</html>

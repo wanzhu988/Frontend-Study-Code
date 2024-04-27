@@ -4,8 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>01_CSS常用长度单位</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+        #d1 {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+        #d2 {
+            /* em 相对于当前元素font size的倍数，不设置fsz时，寻找父元素的fsz，再没有的话使用浏览器默认的值16 */
+            width: 10em;
+            height: 10em;
+            font-size: 1em;
+            background-color: orange;
+        }
+        #d3 {
+            /* em 相对于根元素(HTML元素)font size的倍数,html元素没有定义时浏览器默认为16px */
+            width: 10rem;
+            height: 10rem;
+            font-size: 2rem;
+            background-color: skyblue;
+        }
+        #d4 {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: green;
+        }
+        .inside {
+            /* 相对其父元素的百分比，有特殊情况（定位） */
+            width: 50%;
+            height: 25%;
+            font-size: 150%;
+            background-color: pink;
+        }
+        .test {
+            /* 使用示例：设置首行空两个字体的格子，fsz可以随意改变 */
+            /* 长度必须带单位 */
+            font-size: 20px;
+            text-indent: 2em;
+            background-color: blueviolet;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="d1">1</div>
+    <div id="d2">2</div>
+    <div id="d3">3</div>
+    <div id="d4">
+        3.5<div class="inside">4</div>
+    </div>
+    <hr>
+    <div class="test">
+        Good
+    </div>
 </body>
 </html>
