@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_盒子padding</title>
+    <style>
+        #d1 {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            font-size: 40px;
+
+            /* 单独定义padding，padding不可以是负数 */
+            padding-left: 30px;
+            padding-right: 60px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+
+            /* 一个值定义四个方向padding */
+            padding: 20px ;
+
+            /* 两个值定义上下/左右padding */
+            padding: 20px 30px;
+
+            /* 三个值定义上/左右/下padding */
+            padding: 10px 20px 30px;
+
+            /* 四个值定义上右下左padding */
+            padding: 10px 20px 30px 40px;
+        }
+        #s1 {
+            background-color: orange;
+            font-size: 40px;
+
+            padding-left: 20px;
+            padding-right: 20px;
+
+            /* 行内元素的左右padding可以设置 */
+            /* 行内元素的上下padding也可以设置，但是不占位，如果上下有其他元素则会重叠 */
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        img {
+            /* 块、行内块元素的四个方向padding都可以随意设置不会产生占位 */
+            width: 200px;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">hello</div>
+    <hr>
+    <span id="s1">我很好</span>
+    <span>我很好2</span>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam maxime commodi autem ratione eveniet nulla distinctio ducimus cupiditate alias voluptate officiis reiciendis temporibus, fugiat accusantium vitae laboriosam fugit, consequatur deleniti.</div>
+    <hr>
+    <img src="../images/satoru.png" alt="satoru">
+
+</body>
+</html>

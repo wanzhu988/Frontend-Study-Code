@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_BoxContent</title>
+    <style>
+        div {
+            background-color: skyblue;
+            /* content没给宽度的话，会自动跟随浏览器窗口大小调整宽度*/
+            min-width: 600px;
+            /* min可以被内容撑开 */
+            max-width: 1200px;
+            /* max框定很死，如果里面的内容如文本内容超过了则就溢出框 */
+            /* 一般min max不和普通的width和height同用 */
+
+            /* height: 200px; */
+            min-height: 500px;
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, obcaecati!</div>
+</body>
+</html>

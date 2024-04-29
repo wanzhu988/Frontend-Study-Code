@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_设置默认宽度</title>
+    <style>
+        div {
+            height: 200px;
+            background-color: gray;
+            margin: 50px;
+            border: 5px solid black;
+            /* （没有定义宽度width的时候，盒子宽度随浏览器视窗变化时） */
+            /* margin会减小盒子的宽度，总宽度 = 父元素content宽度 - 自身的左右margin */
+            /* 这里用的父元素是body */
+            /* border和padding不影响盒子宽度，但是会影响content宽度，内容宽度 = 父元素content宽度 - 自身的左右margin - border - padding */
+        }
+    </style>
+</head>
+<body>
+    <div>hello</div>
+</body>
+</html>

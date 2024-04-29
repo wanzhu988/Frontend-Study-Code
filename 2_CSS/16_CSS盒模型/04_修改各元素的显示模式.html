@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_修改各元素的显示模式</title>
+    <style>
+        div {
+            font-size: 20px;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            /* 修改元素为行内块元素 */
+        }
+        #d1 {
+            background-color: aqua;
+        }
+        #d2 {
+            background-color: orange;
+        }
+        #d3 {
+            background-color: bisque;
+        }
+
+        a {
+            font-size: 20px;
+            width: 200px;
+            height: 200px;
+            display: block;
+            /* display也可以设置为none，直接不可见，会显示后面的其他元素 */
+        }
+        #s1 {
+            background-color: aqua;
+        }
+        #s2 {
+            background-color: orange;
+        }
+        #s3 {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">hello1</div>
+    <div id="d2">hello2</div>
+    <div id="d3">hello3</div>
+    <hr>
+    <a href="https://www.baidu.com" id="s1">去百度</a>
+    <a href="https://www.baidu.com" id="s2">去京东</a>
+    <a href="https://www.baidu.com" id="s3">去头条</a>
+</body>
+</html>
