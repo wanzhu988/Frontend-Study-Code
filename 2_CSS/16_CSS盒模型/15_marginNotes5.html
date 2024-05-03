@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_marginNotes5</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            margin-top: -90px;
+            /* box1向上，下面的内容也跟着整体向上 */
+            background-color: aliceblue;
+        }
+        .box2 {
+            margin-top: -100px;
+            /* margin可以是负值，box2向上覆盖box1 */
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+</body>
+</html>

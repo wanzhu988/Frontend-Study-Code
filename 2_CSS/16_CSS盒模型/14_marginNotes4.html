@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_marginNotes4</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            /* auto代表离某个方向能有多远就多远，左右同时设置可以让元素左右居中 */
+            /* 但是上下方向无效，并且这种方式也只对块级元素有效 */
+            margin-left: auto;
+            margin-right: auto;
+            /* 简写：margin: 100px auto; */
+            background-color: aliceblue;
+        }
+        span {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div>Hello</div>
+    <span>Study</span>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarginNotes3</title>
+    <style>
+        #d1 {
+            width: 400px;
+            height: 400px;
+            margin: 50px;
+            background-color: aqua;
+        }
+        #i1 {
+            margin: 50px;
+        }
+        #s1 {
+            background-color: aliceblue;
+        }
+        #s2 {
+            background-color: aqua;
+            margin-left: 30px;
+            margin-right: 60px;
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+        #s3 {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- 行内元素可以设置左右margin，但是无法设置上下margin -->
+    <!-- 块元素及行内块元素可以设置全部margin -->
+    <div id="d1">block element</div>
+    <div>block element</div>
+    <hr>
+    <img id="i1" src="../images/satoru.png" alt="">
+    <hr>
+    <span id="s1">satoru1</span><span id="s2">satoru2</span><span id="s3">satoru3</span>
+</body>
+</html>
