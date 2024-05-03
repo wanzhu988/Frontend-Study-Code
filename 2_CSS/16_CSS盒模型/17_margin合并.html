@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin合并</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            background-color: aliceblue;
+            margin-bottom: 50px;
+        }
+        .box2 {
+            background-color: orange;
+            margin-top: 60px;
+            float: left;
+        }
+        /* 上下边距会合并，上面元素的下边距和下面元素的上边距
+        都为50px时合并为50，如不一样则取更大值 */
+        /* 解决是加float，但是一般不使用，会把排版搞乱 */
+        /* 所以一般不解决这个问题，合理设置margin */
+        .test {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+        .test1 {
+            background-color: yellowgreen;
+            margin-right: 50px;
+        }
+        .test2 {
+            background-color: aqua;
+            margin-left: 50px;
+        }
+        /* 左右边距不合并 */
+    </style>
+</head>
+<body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <hr>
+    <div class="test test1">3</div>
+    <div class="test test2">4</div>
+</body>
+</html>

@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>16_marginCollapse</title>
+    <style>
+        .outer {
+            width: 400px;
+            background-color: gray;
+
+            /* border: red 1px solid; */
+            /* 解决方案一:加border */
+
+            /* padding: 1px; */
+            /* 解决方案二:加padding */
+
+            overflow: hidden;
+            /* 父容器开启BFC解决问题 */
+        }
+        .inner1 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            /* margin-bottom: 50px; */
+
+            margin-top: 50px;
+            /* collapse:给第一个子元素设置margin top是有问题的，这个值会被父元素抢走 */
+        }
+        .inner2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* margin-top: 50px; */
+
+            margin-bottom: 50px;
+            /* collapse:给最后一个子元素设置margin bottom是有问题的，这个值会被父元素抢走 */
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="outer">
+        <div class="inner1">inner1</div>
+        <div class="inner2">inner2</div>
+    </div>
+    <div>test content</div>
 </body>
 </html>
