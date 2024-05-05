@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_浮动的小练习</title>
+    <style>
+        .outer {
+            width: 300px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+            border: 1px black solid;
+            margin: 10px;
+            float: left;
+            /* 三个子元素全部浮动，父元素-outer失去背景色 */
+            /* 但是父元素的宽度依然限制，当宽度过小的时候三个子元素换行 */
+        }
+         .box1 {
+            /* float: left; */
+            /* 盒子1浮起，2上顶到1的下面，box2被box1完全遮盖 */
+            /* 为了显示内容，box2的文字留在原地和box3重叠 */
+
+            height: 300px; 
+            /* 这里box1把box3挡住了，导致box3排到了box2的下面而不是3的下面 */
+
+            }
+
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    </div>
+</body>
+</html>

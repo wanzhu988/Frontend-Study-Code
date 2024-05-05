@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_元素浮动后的特点</title>
+    <style>
+        .outer {
+            width: 800px;
+            height: 400px;
+            background-color: gray;
+            padding: 10px; 
+            text-align: center;      
+        }
+        .box {
+            font-size: 20px;
+            padding: 10px;
+        }
+        .box1 {
+            background-color: aqua;
+        }
+        .box2 {
+            background-color: blue;
+            float: left;
+            /* width: 200px; */
+            /* height: 200px; */
+
+            /* 块/行/行内块元素浮动后特性全部失效，没有定义的话，宽和高都尽可能的窄，只被内容撑开*/
+            /* 宽高也可以设置 */
+            /* 浮动之后元素可以和其他元素共用一行 */
+            /* 浮动之后的元素没有margin和padding设置限制，所有的四个方向都可以设置 */
+            /* 浮动之后的元素不会变成行内块一样可以被当成文本处理(text align不起作用)，没有行内块空白问题 */
+
+        }
+        .box3 {
+            background-color: yellowgreen;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">box1</div>
+        <div class="box box2">box222222222</div>
+        <div class="box box3">box3</div>
+    </div>
+</body>
+</html>
