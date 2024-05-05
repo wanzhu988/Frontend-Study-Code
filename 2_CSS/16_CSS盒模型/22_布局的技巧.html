@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22_布局的技巧</title>
+    <style>
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+
+            overflow: hidden;
+        }
+        .inner {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+
+            margin: 0 auto;
+            margin-top: 150px;
+
+            text-align: center;
+            line-height: 100px;
+        }
+        /* 块元素子元素在父元素里面水平居中：给子元素加上margin: 0 auto */
+        /* 块元素子元素在父元素里面垂直居中：给子元素加上margin top，
+        计算居中需要的值（要记得设置overflow防止父元素偷走子元素的margin top值） */
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">inner</div>
+    </div>
+</body>
+</html>

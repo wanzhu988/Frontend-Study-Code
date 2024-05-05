@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>21_元素的默认样式</title>
+    <style>
+        body {
+            margin: 0;
+            /* 铺满整个视口 */
+            /* 默认样式margin为8px */
+        }
+        #d1 {
+            background-color: grey;
+            font-size: 50px;
+            color: yellow;
+            /* 继承样式的优先级很低，会被默认样式顶掉 */
+        }
+        a {
+            color: yellowgreen;
+            text-decoration: none;
+            cursor: default;
+            /* 必须在选择器中重新覆盖浏览器给的默认样式 */
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="d1">
+        <a href="https://www.baidu.com">Baidu</a>
+        <span>Hallo</span>
+    </div>
+    <hr>
+    <h1>Level1</h1>
+    <h2>Level2</h2>
+    <hr>
+    <p>段落</p>
+    <hr>
+    <ul>
+        <li>Alice</li>
+        <li>Bob</li>
+    </ul>
 </body>
 </html>

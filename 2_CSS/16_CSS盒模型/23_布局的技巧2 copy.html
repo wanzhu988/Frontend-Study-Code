@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_布局的技巧2</title>
+    <style>
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+
+            text-align: center;
+            /* 将行内元素和行内块元素,可以被父元素当做文字来居中处理 */
+            /* 用text align，line height和text indent来调节子元素的对齐 */
+
+            line-height: 400px;
+        }
+        .inner {
+            background-color: orange;
+            font-size: 20px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <span class="inner">SATORU</span>
+    </div>
+</body>
+</html>
