@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_样式的继承</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        body {
+            font-size: 40px;
+            color: blue;
+            font-weight: bold;
+            /* 这三个属性都能继承，从父容器到子容器，优先继承离得近的祖先元素 */
+            /* 和位置布局、盒子模型相关的属性都不能继承（比如大小，边距，溢出方式，背景，边框等） */
+            /* 可以查mdn看是否是继承属性 */
+        }
+        #d1 {
+            height: 600px;
+            padding: 50px;
+            background-color: gray;
+        }
+        #d2 {
+            height: 400px;
+            padding: 50px;
+            background-color: orange;
+        }
+        #d3 {
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <div id="d2">
+            <div id="d3" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Halo</div>
+        </div>
+    </div>
+</body>
+</html>

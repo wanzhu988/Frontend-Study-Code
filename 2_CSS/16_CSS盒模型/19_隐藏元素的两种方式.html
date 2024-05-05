@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19_隐藏元素的两种方式</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            background-color: aliceblue;
+            /* visibility: hidden; */
+            /* 这种方式依然占据位置 */
+        }
+        .box2 {
+            background-color: orange;
+            display: none;
+            /* 不占位 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_处理内容的溢出</title>
+    <style>
+        #d1 {
+            width: 400px;
+            height: 200px;
+            background-color: aliceblue;
+            overflow: auto;
+            /* 默认是visible显示，scroll滚动条，hidden截断溢出部分，auto自动替选择模式 */
+            /* 一般使用hidden和auto */
+            overflow-x: hidden;
+            overflow-y: visible;
+            /* xy无法设置为hidden + visible的形式，会出现滚动条 */
+            /* 最好不要用 */
+
+        }
+        #d2 {
+            width: 1000px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam tenetur ab consequatur, molestias
+        quisquam blanditiis commodi illum quidem odit aspernatur beatae obcaecati rem ipsum optio dolore fugiat eum
+        <div id="d2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsam sit expedita nobis impedit qui culpa consequuntur cum, omnis libero iure sint laudantium eaque laborum deserunt provident rerum eligendi ratione, alias totam repellat. Vero similique nesciunt beatae praesentium quia iusto voluptatibus ea, vel eligendi dolorum, eum in quo optio placeat.</div>
+        error perferendis amet. Voluptate perferendis non itaque atque enim nemo excepturi reiciendis. Nobis provident
+        libero delectus voluptate deleniti debitis voluptatibus est similique tempore nihil cum laborum praesentium in
+        porro, sapiente ullam impedit ratione? Laboriosam accusantium vitae atque eos beatae dolores, magnam optio
+        dolorem. Aliquam delectus nulla voluptates incidunt repellendus nobis cupiditate ipsum, asperiores omnis
+        dignissimos illum perspiciatis adipisci modi? Voluptate explicabo in natus quia eius quasi minima possimus
+        asperiores cumque aspernatur. Ratione.
+    </div>
+</body>
+
+</html>
