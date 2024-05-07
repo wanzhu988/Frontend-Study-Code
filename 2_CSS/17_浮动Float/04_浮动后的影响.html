@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_浮动后的影响</title>
+    <style>
+        .outer {
+            width: 400px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box1, .box2, .box3 {
+            float: left;
+            /* 元素float后，父元素outer没有内容撑开，变成一条黑线 */
+            /* 但是父元素的宽度依然限制float元素 */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <!-- <div class="box box0">0</div> -->
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <!-- 元素float后对后面的元素也有影响，但是对前面的元素没有影响 -->
+        <!-- 后面的兄弟元素占据浮动元素之前的位置 -->
+
+        <div class="box box4">4</div>
+    </div>
+    <!-- <div style="background-color: aqua;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, sapiente consequuntur consequatur voluptas eaque aspernatur officia facere, delectus odio, deserunt vel cupiditate. Officiis quibusdam sunt a quisquam libero. Aliquam, quasi!</div> -->
+</body>
+</html>
