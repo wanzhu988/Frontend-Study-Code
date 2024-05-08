@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_绝对定位</title>
+    <style>
+        .outer{
+            width: 500px;
+            background-color: aliceblue;
+            border: 1px black solid;
+            padding: 20px;
+            position: relative;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: aqua;
+        }
+        .box2 {
+            background-color: blue;
+            position: absolute;
+            /* 开启绝对定位后脱离了文档流 */
+            /* right: 100px;
+            bottom: 0px; */
+            top: 220px;
+            left: 20px;
+            /* 距离包含块上下左右边的距离 */
+            /* 左右同时左生效，上下同时上生效 */
+            /* 定位参考其包含块 */
+            /* 没有脱离文档流的元素，其父元素就是包含块 */
+            /* 脱离文档流的元素，第一个开启定位的祖先元素就是包含块，一直往上找到整个页面 */
+            /* 父元素开启相对定位，子元素开始绝对定位，自绝父相 */
+
+            /* margin-left: 100px; */
+            /* margin-top: 50px; */
+            /* 如果前面设置了left和top，那么就可以通过ml和mt，但是尽量不要用这个 */
+
+            /* float: right; */
+            /* 只听绝对定位的，float无效 */
+
+            /* 绝对定位的元素宽高默认被宽高撑开，也可以设置宽高 */
+
+            /* 主要用于一个元素盖到另外一个元素身上 */
+            /* 然后制造一些动画效果 */
+            /* transition: 1s all linear; */
+        }
+        .box3 {
+            background-color: blueviolet;
+        }
+        .outer:hover .box2{
+            left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <span class="box box2">2</span>
+        <div class="box box3">3</div>
+    </div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ipsum veniam animi reiciendis non libero optio autem quae repellat eaque incidunt perspiciatis tempore quia quidem expedita a, esse minus qui.</div>
+</body>
+</html>

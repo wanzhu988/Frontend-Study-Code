@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_相对定位</title>
+    <style>
+        .outer{
+            width: 500px;
+            background-color: aliceblue;
+            border: 1px black solid;
+            padding: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: aqua;
+        }
+        .box2 {
+            background-color: blue;
+            position: relative;
+            /* 相对于自己原来的位置左/右/上/下方向的距离为100px */
+            /* 与float不同，并没有脱离文档流 */
+            /* 定位可以超出父容器限制 */
+            /* left和right不能同时用，同时用只有left生效 */
+            /* top和bottom不能同时用，同时用只有top生效 */
+            /* 定位之后依然可以用margin来调整，但是不推荐这么做 */
+            left: 100px;
+            /* margin-left: 50px; */
+            /* right: 50px; */
+            top: 50px;
+            /* float: left; */
+            /* 也可以使用float，但是依然不推荐这么做 */
+
+            /* 元素只要开启了定位，层级就比普通元素高，所以box2会盖住box3 */
+            /* 如果都开启了定位，就看先后顺序，后写的盖住前面写的 */
+
+            /* 1对元素位置进行微调，2和绝对定位配合使用 */
+        }
+        .box3 {
+            background-color: blueviolet;
+            position: relative;
+            top: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>
