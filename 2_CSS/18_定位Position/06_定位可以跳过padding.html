@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_定位的特殊应用</title>
+    <style>
+        .outer {
+            width: 800px;
+            height: 600px;
+
+            padding: 20px;
+
+            background-color: #888;
+            position: relative;
+        }
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 定位忽视了padding，直接定位到左上角 */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

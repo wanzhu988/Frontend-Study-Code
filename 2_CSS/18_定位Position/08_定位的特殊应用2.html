@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_定位的特殊应用2</title>
+    <style>
+        .outer {
+            width: 800px;
+            height: 400px;
+            background-color: #888;
+            position: relative;
+        }
+        .inner {
+            width: 400px;
+            height: 100px;
+            background-color: orange;
+            font-size: 20px;
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            /* 让定位元素在包含块中居中 */
+            /* 这种情况需要设置宽和高，不然的话子元素就会铺满父元素了 */
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">hello</div>
+    </div>
+</body>
+</html>

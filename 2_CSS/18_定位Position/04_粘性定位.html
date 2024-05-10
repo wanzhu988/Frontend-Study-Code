@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_粘性定位</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .page-header {
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: orange;
+            font-size: 20px;
+        }
+        .item {
+            background-color: gray;
+        }
+        .first {
+            background-color: skyblue;
+            font-size: 40px;
+            position: sticky;
+            /* 必须指定位置才会生效 */
+            top: 0px;
+            /* 参考离得最近的能够滚动的滚动元素 */
+            /* 参考距离body顶端为10px的时候，就会被粘住 */
+            /* 粘住的效果仅限于父容器内 */
+            /* 设置leftright也可以设置横向粘住，不常用 */
+            float: right;
+            margin-right: 50px;
+        }
+        /* .content {
+            height: 200px;
+            overflow: scroll;
+        } */
+        /* 应用于最近的能滚动的滚动元素 */
+        /* 即使有这种情况：没有设置height但是设置了scroll，为空的滚动条也适用但是无法生效 */
+        /* 也可以和浮动和margin一起设置但是不建议 */
+
+        /* 和相对定位的特点基本一致,不同的是粘性定位到了某个位置可以固定 */
+    </style>
+</head>
+<body>
+    <div class="page-header">Header</div>
+    <div class="content">
+        <div class="item">
+            <div class="first">A</div>
+            <h2>A1</h2>
+            <h2>A2</h2>
+            <h2>A3</h2>
+            <h2>A4</h2>
+            <h2>A5</h2>
+            <h2>A6</h2>
+            <h2>A7</h2>
+            <h2>A8</h2>
+        </div>
+
+        <div class="item">
+            <div class="first">B</div>
+            <h2>B1</h2>
+            <h2>B2</h2>
+            <h2>B3</h2>
+            <h2>B4</h2>
+            <h2>B5</h2>
+            <h2>B6</h2>
+            <h2>B7</h2>
+            <h2>B8</h2>
+        </div>
+
+        <div class="item">
+            <div class="first">C</div>
+            <h2>C1</h2>
+            <h2>C2</h2>
+            <h2>C3</h2>
+            <h2>C4</h2>
+            <h2>C5</h2>
+            <h2>C6</h2>
+            <h2>C7</h2>
+            <h2>C8</h2>
+        </div>
+    </div>
+</body>
+</html>
