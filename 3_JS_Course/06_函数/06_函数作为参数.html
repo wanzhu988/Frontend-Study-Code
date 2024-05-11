@@ -6,9 +6,21 @@
     <title>函数作为参数</title>
     <script>
         function fn(a){
-            console.log("a=", a);
+            console.log("a=", a)
+            // a()
         }
-        fn(123)
+
+        let obj = {name:"satoru"}
+        function fn2(){
+            console.log("fn2")
+        }
+        fn(fn2)
+
+        fn(function(){
+            console.log("no name")
+        })
+
+        fn(() => console.log("arrow fun"))
     </script>
 </head>
 <body>

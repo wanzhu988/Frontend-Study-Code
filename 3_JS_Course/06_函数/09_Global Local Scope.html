@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = "variable a";
+        // global scope
+
+        {
+            let b = "variable b";
+            // local scope, can only be accessed in the block, will be deleted after the execution of the block
+             {
+                console.log(b);
+            }
+        }
+        {
+            console.log(b);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

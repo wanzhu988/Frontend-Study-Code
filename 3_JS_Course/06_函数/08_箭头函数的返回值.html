@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // arrow func's return can be write behind the arrow
+        const sum = (a, b) => a + b;
+
+        // if we set the literal object as the return, we nee to use ()
+        const fn = () => ({name:"satoru"});
+
+        let result = sum(123, 456);
+
+        result = fn();
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

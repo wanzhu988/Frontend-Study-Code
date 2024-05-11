@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let a = 10;
+        {
+            // let a = "a of 1st block";
+            {
+                // let a = "a of 2nd block";
+                // console.log(a);
+            }
+        }
+        let b = 33;
+        function fn() {
+            let b = 44;
+
+            function fn1() {
+                let b = 55;
+                console.log(b);
+            }
+
+            fn1();
+        }
+
+        fn();
+
+        // When we need to use variable X, JS interpreter will first find X in current scope
+        // If no define of X in current X, then it will try to find X in upper scope layer 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

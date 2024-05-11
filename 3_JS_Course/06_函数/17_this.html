@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  
+            this
+                - 函数在执行时，JS解析器每次都会传递进一个隐含的参数this
+                - this会指向一个对象
+                    - this所指向的对象会根据函数调用方式的不同而不同
+                        1.以函数形式调用时，this指向的是window
+                        2.以方法的形式调用时，this指向的是调用方法的对象
+                        ...
+
+                - 通过this可以在方法中引用调用方法的对象
+
+                
+        */
+        function fn() {
+            console.log("fn print", this);
+        }
+
+        const obj = {name: "satoru"};
+        obj.test = fn;
+
+        const obj2 = {name: "suguru", test: fn};
+
+        fn();
+        window.fn();
+        // 这里的this默认指向全局对象window，这两行都打印出window对象
+
+        obj.test();
+        // 指向obj
+
+        obj2.test();
+        // 指向obj2
+
+        const obj3 = {
+            name: "shoko",
+            sayHello: function() {
+                console.log(this.name);
+            },
+        };
+        const obj4 = {
+            name: "wan",
+            sayHello: function() {
+                console.log(this.name);
+            },
+        }
+        obj3.sayHello();
+        obj4.sayHello();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

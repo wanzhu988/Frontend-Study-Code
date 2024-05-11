@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 在JavaScript中，变量和函数的声明（但不包括赋值）会在代码执行前被"提升"到它们各自作用域的顶部。
+        // 对于用var声明的变量，只有声明部分被提升到作用域的顶部。执行任何代码之前，变量已经存在，但初始化（赋值）仍发生在代码中变量赋值的那一行。
+        
+
+        // console.log(b);
+        let b = 10;
+        // let和const声明的变量，在赋值前解释器禁止对该变量的访问(Temporal Dead Zone)，所以无法访问b
+
+        fn();
+        function fn(){
+            alert("I'm fn");
+        }
+        // function declaration函数声明。函数声明整体包括赋值都会被提升。
+
+        fn2();
+        var fn2 = function() {
+            alert("I'm fn2");
+        }
+        //使用 var 声明的函数表达式function expression只提升变量名fn2
+        //不提升函数赋值
+        // 报错，正确写法var fn2 = function() {}; fn2();
+
+        console.log(a);
+        var a = 10;
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

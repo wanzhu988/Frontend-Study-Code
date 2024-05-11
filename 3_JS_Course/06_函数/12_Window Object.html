@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Window Object:
+                -browser offers a window object that can be accessed directly
+                -window pbject can operate the browser window, and can save the inner object of JS and 
+        */
+
+        // alert(window);
+        // window.alert(123);
+        // window.console.log("satoru");
+
+        // All global variable and function can be accessed by window object
+        window.a = 10;
+        console.log(a);
+
+        // var can also be used to define variable
+        // if let and const defines a variable in a block, then this variable's scope will be within the block
+        // but if var do this, this variable will be global and can be accessed by window
+        // var can still define function-scope variables
+        var b = 20 // = (window.b = 20)
+        function fn() {
+            alert("I'm fn");
+        }
+        console.log(window.b);
+        window.fn();
+
+        let c = 33; //Local scope(here scope is the whole script)
+        window.c = 44; //Global scope
+        console.log(c);
+        // c will still be 33, because c is a block scope variable defined by let
+        // console.log(c) will check current scope first, then find outer scope, finally global scope
+
+        // let/const defines block scope variable, and will not be accessed by window
+        // if variable defined by window.a(或者其他未声明赋值方式) or var a, then it will be have global scope 
+
+        function fn2(){
+            // var d = 10;
+            d = 10;
+        }
+        fn2();
+        console.log(d);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
