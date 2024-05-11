@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const Person = class {};
+        class Dog {};
+
+        const p1 = new Person();
+        const d1 = new Dog();
+
+        console.log(p1 instanceof Person);
+
+        const Five = class {
+            name = "satoru"
+            age = 35
+            // 实例属性，只能通过实例访问 f1.name
+            // 意味着创建的所有对象的属性都是这个值，即使赋值也无法覆盖
+
+            static height = 190
+            static weight = 150
+            // 静态属性，只能通过类访问 Five.height
+
+            sleep(){
+                console.log(this.name + " is sleeping");
+            }
+            // sleep = function(){} 添加方法的另一种方式
+            // 实例方法，指向当前实例
+
+            static eat() {
+                console.log(this + " is eating");
+            }
+            // 静态方法，通过类调用，指向当前类
+        }
+
+        const f1 = new Five();
+        const f2 = new Five();
+        const f3 = new Five("suguru", 35);
+
+        console.log(f1.name);
+        console.log(f2);
+        console.log(f3);
+
+        console.log(Five.height);
+        console.log(Five.weight);
+
+        f1.sleep();
+        Five.eat();
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
