@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = [1, "hello", true, null, {name: "satoru"}, () => {}];
+        arr = [1, 2, 3]
+        // 虽然任何类型的值都可以成为数组元素，但要尽量让数组存储相同的数据类型
+        arr = ["孙悟空", "猪八戒", "沙和尚", "唐僧", "白骨精"];
+        for(let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+        // 正向遍历
+        for(let i = arr.length - 1; i >= 0; i--) {
+            console.log(arr[i]);
+        }
+        // 逆向遍历
+
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        const personArr = [
+            new Person("satoru", 28),
+            new Person("suguru", 27),
+            new Person("shoko", 16),
+        ]
+
+        for(let i = 0; i < personArr.length; i++) {
+            if(personArr[i].age <= 18) {
+                console.log(personArr[i]);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

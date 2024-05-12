@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            面向对象的特点：
+                封装、继承和多态
+
+            1.封装
+                - 对象就是一个用来存储不同属性的容器,不仅存储属性，还要负责数据的安全
+                - 直接添加到对象中的属性，并不安全，因为它们可以被任意的修改
+                - 如何确保数据的安全：
+                    1.私有化数据
+                        - 将需要保护的数据设置为私有，只能在类内部使用
+                    2.提供setter和getter方法来开放对数据的操作
+                        - 属性设置私有，通过getter setter方法操作属性带来的好处
+                            1. 可以控制属性的读写权限
+                            2. 可以在方法中对属性的值进行验证
+
+                - 封装主要用来保证数据的安全
+                - 实现封装的方式：
+                    1.属性私有化 加#
+                    2.通过getter和setter方法来操作属性
+                        get 属性名(){
+                            return this.#属性
+                        }
+
+                        set 属性名(参数){
+                            this.#属性 = 参数
+                        }
+
+        */
+
+        class Person {
+            #name;
+            #age;
+            #gender;
+
+            constructor(name, age, gender) {
+                this.#name = name; //私有属性只能在类内部访问
+                this.#age = age;
+                this.#gender = gender;
+            }
+
+            sayHello() {
+                console.log(this.#name);
+            }
+
+            getName() {
+                return this.#name;
+            }
+            setName(name) {
+                this.#name = name;
+            }
+
+            getAge() {
+                return this.#age;
+            }
+            setAge(age) {
+                if(age >= 0){
+                    this.#age = age;
+                }
+            }
+
+            getGender() {
+                return this.#gender;
+            }
+            setGender(gender) {
+                this.#gender = gender;
+            }
+        }
+
+        const p1 = new Person("satoru", 18, "male"); //这里对私有属性通过constructor进行了赋值
+        console.log(p1);
+        p1.age = "suguru"; //直接赋值私有属性会导致失败，创建一个新的公共属性age
+        p1.getName();
+        p1.setAge(-11); //无效操作
+        p1.setName("shoko"); //成功修改私有属性#name
+        p1.gender = "female"; //创建一个新的公共属性gender
+        console.log(p1); // 错误的属性访问尝试导致在实例上错误地创建了公有属性
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

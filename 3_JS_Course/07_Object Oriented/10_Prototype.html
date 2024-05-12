@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person {
+                name = "孙悟空"
+                age = 18
+
+                constructor(){
+                     this.gender = "男"
+                    }
+
+                sayHello() {
+                    console.log("Hello，我是", this.name)
+                }
+            }
+            // 定义在JS类中的方法（不包括通过构造函数定义的方法）会被自动添加到类的原型对象上
+            // 所有实例将共享一个sayHello方法
+
+            const p = new Person();
+            p.address = "花果山";
+            p.sayHello = "hello";
+            console.log(p.sayHello);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
