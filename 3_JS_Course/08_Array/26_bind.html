@@ -17,8 +17,11 @@
                     6. 通过bind返回的函数，this由bind第一个参数决定（无法修改）
 
                 bind() 是函数的方法，可以用来创建一个新的函数
-                    - bind可以为新函数绑定this
-                    - bind可以为新函数绑定参数
+                1.绑定this：第一个参数是一个对象，这个对象将成为原函数调用时的 this 值。
+                例如，如果你有一个方法需要在特定的对象上运行，你可以使用 bind() 来确保无论如何调用该方法，它的 this 总是指向正确的对象。
+                2. 部分应用函数（Partial Application）
+                其余参数用于预设原函数的参数。这意味着你可以传递一个或多个参数给 bind()，这些参数将在绑定的新函数被调用时自动成为原函数的初始参数。
+                称为部分应用，允许你创建一个新函数，预先设置一些参数值，使得新函数在调用时只需要提供剩余的参数。
 
                 箭头函数没有自身的this，它的this由外层作用域决定，
                     也无法通过call apply 和 bind修改它的this 
@@ -31,21 +34,20 @@
             }
 
             const obj = {name:"孙悟空"}
-
-            const newFn = fn.bind(obj, 10, 20, 30)
-
-            // newFn()
-
+            const newFn = fn.bind(obj, 10, 20, 30) 
+            //创建一个新的函数实例，this 值和参数被永久固定。这里this指向obj，参数为10，20，30
+            newFn()
 
             const arrowFn = () => {
                 console.log(this)
             }
-
-            // arrowFn.call(obj)
+            arrowFn.call(obj)
+            //箭头函数没有自己的 this，它的 this 值继承自它被创建时的上下文。
+            //这里arrowFn 是在全局作用域中定义的，所以即便使用 call 方法试图改变 this 的绑定，它仍然指向全局对象（在浏览器中是 window）。
 
             const newArrowFn = arrowFn.bind(obj)
-
-            // newArrowFn()
+            newArrowFn()
+            //同上面一样的操作，得到一样的结果（输出window对象）
 
             class MyClass{
                 fn = () => {
@@ -54,8 +56,23 @@
             }
 
             const mc = new MyClass()
+            mc.fn.call(window)
+            // 类的实例 mc 中，fn 的 this 永久绑定到创建它的实例 mc 上。
+            // 即使使用 call 尝试将 fn 的 this 绑定到 window 或其他对象，this 仍然指向 mc。
+            // 这说明在类属性中定义的箭头函数会绑定到类的实例。
 
-            // mc.fn.call(window)
+            function greet(greeting, punctuation) {
+                console.log(greeting + ", " + this.name + punctuation);
+            }
+            const person = { name: "Alice" };
+            const greetAlice = greet.bind(person, "Hello");
+            greetAlice("!");
+            // 在这个例子中：
+            // greet.bind(person, "Hello") 创建了一个新的函数 greetAlice。
+            // 在 greetAlice 中，this 被永久绑定为 person 对象。
+            // 第二个参数 "Hello" 被预设为 greet 函数的第一个参数 greeting。
+            // 当 greetAlice("!") 被调用时，"!" 作为第二个参数 punctuation 传入，因此输出结果是 "Hello, Alice!"。
+
         </script>
     </head>
     <body></body>
