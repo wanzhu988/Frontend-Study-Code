@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            class Person {
+                name = "孙悟空"
+                age = 18
+
+                sayHello() {
+                    console.log("Hello，我是", this.name)
+                }
+            };
+            class Dog {};
+            const p = new Person();
+            const p2 = new Person();
+            p.sayHello = "hello"; 
+            //这行代码实际上并不修改原型上的sayHello方法，而是在p这个对象上直接添加一个名为sayHello的新属性。
+            //这意味着对p调用sayHello时不再访问原型链上的函数，而是这个新的字符串属性。
+
+            const d = new Dog();
+            const d2 = new Dog();
+
+            console.log(p);
+            console.log(p2);
+            console.log(p.__proto__ === p2.__proto__);
+
+            class Animal{};
+
+            class Cat extends Animal{}; //Cat的原型是Animal的实例
+
+            class TomCat extends Cat{}; //TomCat的原型是Cat的实例
+            //通过这些原型链接，TomCat的实例可以访问Animal类定义的所有方法和属性。
+            const cat = new Cat()
+            console.log(cat.__proto__);
+            console.log(cat.__proto__.__proto__);
+            console.log(cat.__proto__.__proto__.__proto__);
+            console.log(cat.__proto__.__proto__.__proto__.__proto__);
+            //根据继承层次结构，cat对象的原型链是：
+            //Cat.prototype = animal的实例
+            //Animal.prototype = Object的实例
+            //Object.prototype = Object的原型
+            //null = Object原型的原型为null
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
