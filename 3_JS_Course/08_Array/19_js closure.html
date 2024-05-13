@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = "全局变量a"
+
+        /* 
+            函数作用域是在函数定义时就确定的，这称为词法作用域。
+            词法作用域意味着函数的作用域基于函数被声明的位置决定，
+            而不是在哪里被调用。因此，一个函数可以访问它被定义时所处的环境中的变量。
+
+            闭包利用的就是词法作用域
+        
+        */
+        function fn(){
+            console.log(a)
+        }
+        //fn() 在全局作用域中定义，它的词法作用域包括全局变量 a
+
+
+        function fn2(){
+            let a = "fn2中的a"
+
+            fn()
+        }
+
+        // fn2()尽管 fn2() 中有一个同名局部变量 a，
+        //fn() 打印的依然是全局的 a，因为 fn() 的作用域链在它被定义时已经确定。
+
+
+        function fn3(){
+            let a = "fn3中的a"
+
+            function fn4(){
+                console.log(a)
+            }
+            //fn4() 是一个闭包，因为它访问了它外部函数 fn3() 的作用域中的变量 a
+
+            return fn4
+        }
+
+        let fn4 = fn3()
+        fn4()
+        //当 fn3() 被调用时，它返回函数 fn4()。此时，fn4() 被存储在变量 fn4 中，
+        //尽管 fn3() 的执行已经完成，但由于闭包的存在，fn4() 仍然可以访问变量 a。
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

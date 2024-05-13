@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
+    <script>
+        /*
+            早期JS中，直接通过函数来定义类
+                - 一个函数如果直接调用 xxx() 那么这个函数就是一个普通函数
+                - 一个函数如果通过new调用 new xxx() 那么这个函数就是一个够早函数
+         */
+        var Person = (function() {
+            function Person(name, age){
+                this.name = name;
+                this.age = age;
+            }//构造器
+            Person.prototype.sayHello = function() {
+                console.log(thus.name);
+            }//添加原型方法
+            Person.staticProperty = "xxx";
+            Person.staticMethod = function() {};
+            return Person;
+        })()
+
+        const p = new Person("孙悟空", 18) //这个实例具有名字和年龄属性，并可以调用sayHello()方法。
+        console.log(p)
+
+        var Animal = (function(){
+                function Animal(){
+                }
+                return Animal
+            })() //IIFE方式定义person函数
+
+    
+        var Cat = (function(){
+            function Cat(){
+            }
+            // 继承Animal
+            Cat.prototype = new Animal() //Cat通过将其原型设置为Animal的一个新实例来实现对Animal的继承。这意味着Cat的所有实例都将继承Animal的方法和属性
+            return Cat
+        })()
+        var cat = new Cat()
+        console.log(cat)
+</script>
+</head> 
+<body>  
     
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <script>
+            /*
+                使用了一个高阶函数outer来增强其他函数的功能，非常实用，
+                特别是在需要添加额外功能但又不希望修改原始函数的情况下。
+                这种编程技巧通常称为装饰器模式或函数封装，在JavaScript中通过高阶函数实现非常简便。
+
+                希望在someFn()函数执行时，可以记录一条日志,
+                在不修改原函数的基础上，为其增加记录日志的功能
+                可以通过高阶函数，来动态的生成一个新函数
+            */
+
+            function someFn() {
+                return "hello"
+            }
+
+            function outer(cb){
+                return () => {
+                    console.log("记录日志~~~~~")
+                    const result = cb()
+                    return result
+                }
+            }
+
+            let result = outer(someFn) 
+            //result变量现在是一个新的函数，
+            //它在执行someFn函数的同时，会首先打印日志。someFn本身只是简单地返回字符串"hello"。
+
+            console.log(result())
+            result()
+
+
+            function test(){
+                console.log("test~~~~")
+                return "test"
+            }
+
+            let newTest = outer(test)
+            newTest()
+            //同样，newTest是test函数的增强版本。
+            //在调用newTest()时，它不仅执行test函数（打印"test~~~~"并返回字符串"test"），还会先打印"记录日志~~~~~"
+        </script>
+    </head>
+    <body></body>
+</html>

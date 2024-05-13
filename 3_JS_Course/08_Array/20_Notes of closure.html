@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+
+            function outer(){
+                let someVariable = "someValue"
+
+                return function(){
+                    console.log(someVariable)
+                }
+            }
+
+            let closureFunction = outer();  // 创建闭包
+            closureFunction();              // 调用闭包，输出 "someValue"
+            //展示了如何创建一个闭包，outer 函数返回一个匿名函数，该函数访问并输出外部函数中定义的变量 someVariable。
+
+            /* 
+                闭包允许一个函数访问定义该函数时的作用域链。这意味着即使外部函数已经返回，闭包仍然可以访问外部函数中的变量。
+                生命周期：
+                    1. 闭包在外部函数调用时产生，外部函数每次调用都会产生一个全新的闭包
+                    2. 闭包会在内部函数失去引用且被垃圾回收时销毁。如果闭包还被某处引用，它将继续存在。
+
+                注意事项：
+                    闭包主要用来隐藏一些不希望被外部访问的内容，
+                        这就意味着闭包需要占用一定的内存空间
+
+                    相较于类来说，闭包比较浪费内存空间（类可以使用原型而闭包不能），
+                        需要执行次数较少时，使用闭包
+                        需要大量创建实例时，使用类
+                        
+                由于每个闭包都保存了对其外部变量的引用，所以闭包可能比其他方法（如使用类）更加占用内存。
+            
+            */
+
+            function outer2(){
+                let num = 0
+                return () => {
+                    num++
+                    console.log(num)
+                }
+            }
+
+            let fn1 = outer2() // 独立闭包
+            let fn2 = outer2() // 独立闭包
+
+            fn1() //1
+            fn2() //1
+
+            fn1 = null
+            fn2 = null
+            //垃圾回收机制回收这些闭包占用的内存
+
+
+
+        </script>
+    </head>
+    <body></body>
+</html>
