@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            const obj = {
+                name: "孙悟空",
+                friend: {
+                    name: "猪八戒",
+                },
+            }
+
+            // 对obj进行浅复制
+            const obj2 = Object.assign({}, obj)
+
+            // 对obj进行深复制
+            const obj3 = structuredClone(obj)
+
+            // 利用JSON来完成深复制
+            const str = JSON.stringify(obj) //先把对象转换成json字符串
+            const obj4 = JSON.parse(str) //再把字符串转换回对象
+
+            const obj5 = JSON.parse(JSON.stringify(obj)) //快捷写法
+            console.log(obj);
+            console.log(obj2);
+            console.log(obj3);
+            console.log(obj4);
+            console.log(obj5);
+        </script>
+    </head>
+    <body></body>
+</html>

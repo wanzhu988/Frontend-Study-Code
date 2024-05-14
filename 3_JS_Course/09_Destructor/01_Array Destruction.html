@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.destructuring assignment解构赋值
+        //允许从数组或对象中提取数据，并赋值给声明的变量
+        const arr = ["孙悟空", "猪八戒", "沙和尚"];
+        let a, b, c;
+        [a, b, c] = arr; //数组 arr 的前三个元素分别赋值给了变量 a、b 和 c
+
+        let [d, e, f, g] = ["唐僧", "白骨精", "蜘蛛精", "玉兔精"];
+        //2.声明同时解构
+        //同时声明了四个变量 d, e, f, g 并从新数组中解构赋值。d 得到 "唐僧"，e 得到 "白骨精"，依此类推。
+
+        [d, e, f = 77, g = g] = [1, 2, 3];
+        //3.设置默认值
+        //1和2被赋值给d和e，f初始值为77，如果右边数组没有第三个元素则f就是77，这里f为3
+        //如果g之前没有被定义或者初始值，并且右边数组没有第四个元素，则g为undefined
+
+        let [n1, n2, ...n3] = [4, 5, 6, 7];
+        //4.使用剩余参数
+        // ... 符号可以将剩余的数组元素赋值给一个新的数组 n3。这里 n1 和 n2 分别是 4 和 5，n3 将是 [6, 7]。
+
+        function fn(){
+            return ["二郎神", "猪八戒"];
+        }
+        let [name1, name2] = fn(); 
+        //5.函数返回数组时如何进行解构。
+        //name1 和 name2 分别被赋值为 "二郎神" 和 "猪八戒"。
+
+        let a1 = 10;
+        let a2 = 20;
+        [a1, a2] = [a2, a1];
+        //6.利用解构赋值，可以非常简洁地交换两个变量的值，无需使用临时变量。
+
+        const arr3 = [["孙悟空", 18, "男"], ["猪八戒", 28, "男"]];
+        let [[name, age, gender], obj] = arr3;
+        //arr3 二维数组解构
+        //name, age, gender 分别赋值为 "孙悟空"，18，"男"；
+        //obj 则是数组的第二个元素，即 ["猪八戒", 28, "男"]。
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

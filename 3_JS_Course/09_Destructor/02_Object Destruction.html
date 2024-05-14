@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            const obj = { name: "孙悟空", age: 18, gender: "男" }
+
+            //使用解构赋值将这些属性的值赋给三个新的变量 name、age、和 gender
+            // let { name, age, gender } = obj // 写法1：声明变量同时解构对象
+            // console.log(name, age, gender)
+
+            let name, age, gender
+            ({ name, age, gender } = obj) //写法2：先声明再解构
+            //如果不使用圆括号，JavaScript会将 {} 解释为一个代码块而不是解构赋值的部分。
+
+            let { address } = obj // 没有的属性返回undefined(不需要圆括号，因为是声明同时解构)
+            //尝试从 obj 对象中解构出一个不存在的 address 属性。由于 obj 中没有 address 属性，解构赋值后的 address 变量将得到 undefined
+            console.log(address);
+
+
+            console.log(name, age, gender)
+            let {name:a, age:b, gender:c=12, address:d="花果山"} = obj
+            console.log(a, b, c, d)
+            //在解构时重命名变量，并为解构的变量设置默认值。这里：
+            // name 属性的值被赋给了新变量 a。
+            // age 属性的值被赋给了新变量 b。
+            // gender 属性的值被赋给了新变量 c。
+            // address 属性由于在对象中不存在，所以新变量 d 被赋予了默认值 "花果山"。
+        </script>
+    </head>
+    <body></body>
+</html>
