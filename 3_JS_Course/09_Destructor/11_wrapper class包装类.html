@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+
+            // 
+            //     JavaScript中的原始数据类型（如字符串、数字和布尔值）通常不是对象。
+            //     然而，JavaScript提供了对应的包装对象，如 String、Number 和 Boolean，这使得原始值能够表现出对象的行为。
+            //     对一个原始值调用方法或属性时，JS解释器会临时将原始值包装为对应的对象，调用这个对象的属性或方法
+            //     由于原始值会被临时转换为对应的对象，这就意味着对象中的方法都可以直接通过原始值来调用（没有必要使用包装类）
+
+            //     包装类：
+            //         JS中一共有5个包装类，通过包装类可以将一个原始值包装为一个对象
+            //             String --> 字符串包装为String对象
+            //             Number --> 数值包装为Number对象
+            //             Boolean --> 布尔值包装为Boolean对象
+            //             BigInt --> 大整数包装为BigInt对象
+            //             Symbol --> 符号包装为Symbol对象
+            // 
+
+            // let str = new String("hello")
+            // let num = new Number(11)
+            // let bool = new Boolean(true)
+            // let bool2 = new Boolean(true)
+            //对象与其原始值在严格比较（使用 ===）时不相等，因为对象与原始值本质上是不同的。
+
+            // alert(bool == bool2)
+            // 输出false，因为对象之间的比较是引用比较
+
+            let str = "hello"
+            str.name = "哈哈"
+            //当你对一个原始值调用方法时，JavaScript会临时将这个原始值包装为一个对象，
+            //从而可以调用对象的方法。这个过程是透明的，且仅发生在方法调用的瞬间。
+            //尽管你可以尝试向原始字符串添加属性，但这实际上并不会影响原始字符串。字符串（和其他原始值）是不可变的，
+            //且在这种情况下，属性的添加不会持久化，因为一旦临时对象被丢弃，添加的属性也就消失了。
+
+            let num = 11
+            num = num.toString()
+            //原始值通过暂时的对象包装可以访问到 Number 对象的 toString() 方法。
+
+            // console.log(null.toString()); 
+
+            console.log(num)
+
+
+       
+        </script>
+    </head>
+    <body></body>
+</html>

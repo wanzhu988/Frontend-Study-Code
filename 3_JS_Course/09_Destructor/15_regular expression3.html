@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /* 
+                量词
+                    {m} 正好m个
+                    {m,} 至少m个
+                    {m,n} m-n个
+                    + 一个以上，相当于{1,}
+                    * 任意数量的a
+                    ? 0-1次 {0,1}
+            */
+
+            let re = /a{3}/ // 匹配正好连续出现三次'a'
+
+            re = /^a{3}$/ // 匹配字符串全是 'aaa'，没有其他字符
+
+            re = /^(ab){3}$/ // 匹配 'ababab'，这个组合正好重复三次
+
+            re = /^[a-z]{3}$/ // 匹配任何三个小写字母的组合，如 'abc'
+
+            re = /^[a-z]{1,}$/ // 匹配至少一个小写字母，等价于 /^[a-z]+$/ 或 /[a-z]+/
+
+            re = /^[a-z]{1,3}$/ // 匹配1到3个小写字母，如 'a', 'ab', 'abc'
+
+            re = /^ba+$/  // 匹配 'b' 后跟着至少一个 'a'，如 'ba', 'baa', 'baaa' 等
+
+            re = /^ba*$/  // 匹配 'b' 后跟着任意数量的 'a'，包括零个，如 'b', 'ba', 'baa' 等
+            
+            re = /^ba?$/ // 匹配 'b' 后跟着零个或一个 'a'，即 'b' 或 'ba'
+
+            let result = re.test("baa")
+
+            console.log(result)
+        </script>
+    </head>
+    <body></body>
+</html>

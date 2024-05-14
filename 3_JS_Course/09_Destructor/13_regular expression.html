@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /* 
+                正则表达式
+                    - 正则表达式用来定义一个规则
+                    - 通过这个规则计算机可以检查一个字符串是否符合规则
+                        或者将字符串中符合规则的内容提取出来
+                    - 正则表达式也是JS中的一个对象，
+                        所以要使用正则表达式，需要先创建正则表达式的对象
+            */
+
+
+            // 方法一：new RegExp() 可以接收两个参数（字符串） 1.正则表达式 2.匹配模式
+            let reg = new RegExp("a", "i") // 通过构造函数来创建一个正则表达式的对象
+            //这个正则表达式匹配字符串中的字母 "a"，无论大小写（由于 "i" 参数，表示忽略大小写）。
+
+            // 方法二：使用字面量来创建正则表达式：/正则/匹配模式
+            //创建正则表达式的更常见方式，使用正则表达式字面量。这种方法更简洁，执行效率也更高，因为正则表达式在脚本加载时就已经编译好了。
+            reg = /a/i
+
+            reg = /\w/
+            console.log(reg)
+            reg = new RegExp("\\w")
+            console.log(reg)
+            //\w 是一个正则表达式，用于匹配任何字母数字字符（等价于 [a-zA-Z0-9_]）。第一行使用的是正则表达式字面量
+            //第二行使用 RegExp 构造函数时，需要对反斜线进行转义（使用两个反斜线 \\），因为在 JavaScript 字符串中反斜线本身就是一个转义字符。
+
+            reg = new RegExp("a") // /a/ 表示，检查一个字符串中是否有a ，等于 reg = /a/
+            // 通过正则表达式检查一个字符串是否符合规则
+            //reg.test(str) 检查字符串 str 是否包含至少一个符合模式的部分。这里的模式是 /a/，它查找字母 "a"。
+            let str = "a"
+            let result = reg.test(str) // true
+
+            result = reg.test("b") // false
+            console.log(result);
+            result = reg.test("Abc") // true
+            console.log(result);
+            result = reg.test("bcabc") // true
+            console.log(result);
+
+        </script>
+    </head>
+    <body></body>
+</html>
