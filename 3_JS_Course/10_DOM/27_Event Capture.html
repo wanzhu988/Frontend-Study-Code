@@ -45,6 +45,7 @@
 
                     - 如果希望在捕获阶段触发事件，可以将addEventListener的第三个参数设置为true
                         一般情况下我们不希望事件在捕获阶段触发，所有通常都不需要设置第三个参数
+                    - 在任何阶段使用 event.stopPropagation() 可以阻止事件进一步传播，无论是在捕获还是冒泡阶段。
 
             */
 
@@ -53,18 +54,27 @@
             const box3 = document.getElementById("box3")
 
             box1.addEventListener("click", event => {
-                alert("1" + event.eventPhase) // eventPhase 表示事件触发的阶段
-                //1 捕获阶段 2 目标阶段 3 冒泡阶段
+                alert("1" + event.eventPhase) // eventPhase 表示事件触发的阶段: 1 捕获阶段 2 目标阶段 3 冒泡阶段
             })
+            // 捕获阶段：无弹窗。
+            // 目标阶段：box1 的监听器触发，显示 “12”。
+            // 冒泡阶段：不再向上传递，因为已经是最外层。
 
             box2.addEventListener("click", event => {
-
                 alert("2" + event.eventPhase)
             })
+            //box2（中间层的 div）：
+            // 捕获阶段：无弹窗。
+            // 目标阶段：box2 的监听器触发，显示 “22”。
+            // 冒泡阶段：事件传到 box1，显示 “13”。
 
             box3.addEventListener("click", event => {
                 alert("3" + event.eventPhase)
             })
+            //点击 box3（最内层的 div）时：
+            // 捕获阶段：由于监听器默认不在捕获阶段触发，没有弹窗。
+            // 目标阶段：box3 的监听器触发，弹窗显示 “32”（目标阶段，因为事件处于触发元素上）。
+            // 冒泡阶段：事件向上传递，先触发 box2 的监听器，弹窗显示 “23”（冒泡阶段），然后是 box1 的监听器，弹窗显示 “13”。
 
         </script>
     </body>

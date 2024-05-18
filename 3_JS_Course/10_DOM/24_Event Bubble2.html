@@ -11,6 +11,7 @@
                 height: 100px;
                 background-color: greenyellow;
                 border-radius: 50%;
+                /* 使元素外边框的角变圆 */
                 position: absolute;
             }
 
@@ -49,6 +50,9 @@
                 使小绿球可以跟随鼠标一起移动
                 
                 事件的冒泡和元素的样式无关，之和结构相关
+                元素的 CSS 样式，如颜色、边距、定位（即使是绝对定位或浮动）等，改变的只是元素的视觉表现和它在视口中的位置，但不会改变元素在 DOM 树中的位置。因此，样式变化不影响事件的传播路径。
+                事件冒泡是一种事件处理机制，在这种机制下，当一个事件在某个元素上发生后，它会依次向上传递至该元素的父元素，一直到文档的根元素（通常是 document 对象）。
+                这个过程中，每一个经过的元素都有机会响应和处理这个事件。
             */
 
             const box1 = document.getElementById("box1")
@@ -57,6 +61,8 @@
             document.addEventListener("mousemove", (event) => {
                 box1.style.left = event.x + "px"
                 box1.style.top = event.y + "px"
+                //在整个文档上监听 mousemove 事件，这样无论鼠标在页面的何处移动，事件都会被捕获。
+                //每当鼠标移动时，box1 的 left 和 top 样式属性被设置为鼠标的 x 和 y 坐标值。这导致 box1 的位置即时更新到鼠标所在的位置。
             })
 
             box2.addEventListener("mousemove", event => {

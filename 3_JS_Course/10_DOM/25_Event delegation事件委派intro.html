@@ -24,17 +24,20 @@
                     只绑定一次事件，既可以让所有的超链接，包括当前的和未来新建的超链接都具有这些事件
 
                 思路：
+                    利用事件的冒泡机制，将事件监听器绑定在一个高级别的元素（如 document 或某个容器元素）上，
+                    然后根据事件的来源（event.target）来判断如何响应。
                     可以将事件统一绑定给document，这样点击超链接时由于事件的冒泡，
                         会导致document上的点击事件被触发，这样只绑定一次，所有的超链接都会具有这些事件
             */
-
-            const links = document.querySelectorAll("ul a")
+ 
+            const links = document.querySelectorAll("ul a") //links 获得当前文档中所有位于 ul 元素内的 a 标签的引用
             const list = document.getElementById("list")
             const btn = document.getElementById("btn")
 
             document.addEventListener("click", (event) => {
                 alert(event.target.textContent)
             })
+            //由于事件会从触发点（如一个链接）冒泡到 document，这使得无论何时点击页面上的任何元素，都将触发这个监听器。
 
             // 点击按钮后，在ul中添加一个新的li
             btn.addEventListener("click", () => {
@@ -42,6 +45,8 @@
                     "beforeend",
                     "<li><a href='javascript:;'>新超链接</a></li>"
                 )
+                //新添加的链接同样会响应之前在 document 上设置的点击事件监听器
+                //因为事件监听是在 document 级别设置的，这展示了事件委托的强大功能：无需为新元素重新绑定事件。
             })
         </script>
     </body>
