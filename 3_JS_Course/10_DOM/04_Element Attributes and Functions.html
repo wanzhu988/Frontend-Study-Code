@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="box1">
+            我是box1
+            <span class="s1">我是s1</span>
+            <span class="s1">我是s1</span>
+        </div>
+
+        <span class="s1">我是s2</span>
+
+        <script>
+            /* 
+                div元素的原型链
+                    HTMLDivElement -> HTMLElement -> Element -> Node -> ...
+
+                通过元素节点对象获取其他节点的方法
+                    element.childNodes 获取当前元素的子节点（文本节点加元素节点，文本节点会有空白和换行）
+                    element.children 获取当前元素的子元素节点
+                    element.firstElementChild 获取当前元素的第一个子元素
+                    element.lastElementChild 获取当前元素的最后一个子元素
+                    element.nextElementSibling 获取当前元素的下一个兄弟元素
+                    element.previousElementSibling 获取当前元素的前一个兄弟元素
+                    element.parentNode 获取当前元素的父节点
+                    element.tagName 获取当前元素的标签名
+            */
+
+            const box1 = document.getElementById("box1")
+            console.log(box1);
+
+            const spans = box1.getElementsByTagName("span")
+            console.log(spans);
+
+            const spans2 = box1.getElementsByClassName("s1")
+            console.log(spans2);
+
+            const cns = box1.childNodes
+            console.log(cns);
+            //childNodes 包含以下内容：
+            // 第一个text节点：包含<div>标签内的“我是box1”及其前后的空白字符。
+            // 第一个span.s1：第一个<span>元素。
+            // 第二个text节点：第一个<span>和第二个<span>之间的空白字符。
+            // 第二个span.s1：第二个<span>元素。
+            // 第三个text节点：最后一个<span>后面的空白字符。
+
+            const children = box1.children
+            console.log(children);
+            //忽略了空白和元素节点
+
+            console.log(children.length)
+
+            const sib = box1.nextElementSibling
+            console.log(sib);
+
+            const presib = box1.previousElementSibling
+            console.log(presib);
+
+            const parent = box1.parentNode
+            console.log(parent);
+        </script>
+    </body>
+</html>

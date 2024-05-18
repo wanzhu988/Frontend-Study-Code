@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn">点我一下</button>
+
+        <script>
+            /* 
+                DOM - Document Object Model，属于web api的一部分，提供了能使js可以控制网页的对象
+                （文档document = 整个网页）
+                DOM把网页中的所有的各个部分转换成了对象（文字，标签，标题），从而可以以完全的面向对象的方式来修改网页
+                Model代表对象之间的关系，父子，祖先，兄弟，从而可以通过一个对象去获取其他对象（网页里所有元素都是对象，可以形成一个关系树，通过一个元素可以找到其他所有元素）
+
+                Node - 网页中的每一个对象都是一个node，document node文档节点，element node元素节点，text node文本节点，attribute node属性节点
+                Node类似于Object，是网页中的所有对象的共同的父类
+
+                要使用DOM来操作网页，我们需要浏览器至少得先给我一个对象，然后才能找到其他对象去完成各种操作
+                所以浏览器已经为我们提供了一个document对象，它是一个全局变量可以直接使用
+                document代表的是整个的网页
+            */
+
+            console.log(document)
+
+            // 通过document获取btn对象
+            const btn = document.getElementById("btn") //获取id为btn的元素
+            console.log(btn)
+            // 修改btn中的文字
+            btn.innerText = "Click ME"
+        </script>
+    </body>
+</html>

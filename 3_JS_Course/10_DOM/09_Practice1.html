@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 640px;
+            margin: 50px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const info = document.getElementById("info")
+            const img = document.getElementsByTagName("img")[0]
+            const prev = document.getElementById("prev")
+            const next = document.getElementById("next")
+
+            const imgArr = [
+                "./images/1.png",
+                "./images/2.png",
+                "./images/3.png",
+                "./images/4.png",
+                "./images/5.png",
+            ]
+
+            let current = 0
+            info.textContent = `We have ${imgArr.length} pictures, now this is the ${current + 1} one`
+
+            prev.onclick = function () {
+                current --
+                if(current < 0){
+                    current = imgArr.length - 1
+                }
+                img.src = imgArr[current]
+                info.textContent = `We have ${imgArr.length} pictures, now this is the ${current + 1} one`
+            }
+
+            next.onclick = function () {
+                current ++
+                if(current > imgArr.length - 1){
+                    current = 0
+                }
+                img.src = imgArr[current]
+                info.textContent = `We have ${imgArr.length} pictures, now this is the ${current + 1} one`
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div class="outer">
+        <p id = "info">
+            We have n pictures, now this is the m one
+        </p>
+        <div class="img-wrapper">
+            <img src="./images/1.png" alt="This is a picture">
+        </div>
+
+        <div class="btn-wrapper">
+            <button id="prev">previous</button>
+            <button id="next">next</button>
+        </div>
+    </div>
+</body>
+</html>

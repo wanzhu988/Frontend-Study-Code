@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            const hobbies = document.getElementsByName("hobby")
+
+            const allBtn = document.getElementById("all")
+            allBtn.onclick = function () {
+                for(let i = 0; i < hobbies.length; i++){
+                    hobbies[i].checked = true;
+                }
+            }
+            const noBtn = document.getElementById("no")
+            noBtn.onclick = function() {
+                for(let i = 0; i < hobbies.length; i++){
+                    hobbies[i].checked = false;
+                }
+            }
+
+            const rebtn = document.getElementById("reverse")
+            rebtn.onclick = function() {
+                for(let i = 0; i < hobbies.length; i++){
+                    hobbies[i].checked = !hobbies[i].checked
+            }
+        }
+
+            const sendBtn = document.getElementById("send")
+            sendBtn.onclick = function() {
+                for(let i = 0; i < hobbies.length; i++){
+                    if(hobbies[i].checked) {
+                        alert(hobbies[i].value)
+                    }
+            }
+        }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form action="#">
+            <div>
+                Please choose your hobby:
+                <input type="checkbox" id="check-all" />select check-all
+            </div>
+            <div>
+                <input type="checkbox" name="hobby" value="vollyball">Vollyball
+                <input type="checkbox" name="hobby" value="basketball">Basketball
+                <input type="checkbox" name="hobby" value="football">Football
+                <input type="checkbox" name="hobby" value="tennisball">Tennisball
+            </div>
+            <div>
+                <button type="button" id="all">select all</button>
+                <button type="button" id="no">dis-select all</button>
+                <button type="button" id="reverse">reverse all</button>
+                <button type="button" id="send">send</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
