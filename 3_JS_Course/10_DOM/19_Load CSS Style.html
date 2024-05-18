@@ -15,6 +15,7 @@
                 content: "hello";
                 color: red;
             }
+            /* 伪元素在 div 前添加了内容 "hello" 并设置其文本颜色为红色 */
         </style>
     </head>
     <body>
@@ -36,30 +37,36 @@
                 /* 
                     getComputedStyle()
                         - 它会返回一个对象，这个对象中包含了当前元素所有的生效的样式
+                        可以获取一个元素的所有计算后的样式，包括由 CSS 直接定义的和由浏览器计算得出的。
                         - 参数：
                             1. 要获取样式的对象
                             2. 要获取的伪元素
                         - 返回值：
-                            返回的一个对象，对象中存储了当前元素的样式
+                            返回的一个对象，对象中存储了当前元素的全部样式
 
                         - 注意：
                             样式对象中返回的样式值，不一定能来拿来直接计算
                                 所以使用时，一定要确保值是可以计算的才去计算
                 */
-                const styleObj = getComputedStyle(box1)
-
+                const styleObj = getComputedStyle(box1) //获取 box1 的计算样式。
+                console.log(styleObj);
                 console.log(styleObj.width)
+                //输出 div 的宽度（styleObj.width），这个值通常会以像素（px）形式返回。
                 console.log(styleObj.left)
+                //输出元素的左边界（styleObj.left），但如果元素没有绝对或相对定位，这个值可能为 "auto"。
 
                 console.log(parseInt(styleObj.width) + 100)
                 box1.style.width = parseInt(styleObj.width) + 100 + "px"
+                //增加并设置 div 的宽度：将当前宽度解析为整数并加上 100 像素。
 
                 console.log(styleObj.backgroundColor)
 
                 const beforeStyle = getComputedStyle(box1, "::before")
+                //获取并输出 ::before 伪元素的颜色（beforeStyle.color）。
                 console.log(beforeStyle.color)
 
                 console.log(box1.firstElementChild)
+                //输出null，没有子元素因为 box1 中只包含了一个伪元素。
             }
         </script>
     </body>

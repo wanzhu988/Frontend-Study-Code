@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
         #box1{
-            width: 200px;
+            width: 400px;
             height: 200px;
             padding: 50px;
             margin: 50px;
@@ -17,7 +21,7 @@
         }
 
         #box2{
-            width: 100px;
+            width: 200px;
             height: 500px;
             background-color: orange;
         }
@@ -43,15 +47,15 @@
             /* 
                 元素.clientHeight
                 元素.clientWidth
-                    - 获取元素内部的宽度和高度（包括内容区和内边距）
+                    - 返回元素的内部高度和宽度，包括内容区和内边距（padding），但不包括边框和滚动条。
 
                 元素.offsetHeight
                 元素.offsetWidth
-                    - 获取元素的可见框的大小（包括内容区、内边距和边框）
+                    - 返回元素的整体可见框尺寸，包括内容区、内边距和边框。
 
                 元素.scrollHeight
                 元素.scrollWidth
-                    - 获取元素滚动区域的大小
+                    - 返回元素的完整内容区域的尺寸，即使它不可见（因为被滚动条隐藏）。
 
                 元素.offsetParent
                     - 获取元素的定位父元素
@@ -60,22 +64,29 @@
 
                 元素.offsetTop
                 元素.offsetLeft
-                    - 获取元素相对于其定位父元素的偏移量
+                    - 获取元素相对于其定位父元素的偏移量，通常是边框到边框的距离
 
                 元素.scrollTop
                 元素.scrollLeft
-                    - 获取或设置元素滚动条的偏移量
+                    - scrollTop 获取或设置垂直方向的滚动位置，scrollLeft 获取或设置水平方向的滚动位置。
+
             */
+            console.log(box1.clientHeight); //输出300px（200px+padding的50px * 2)
+            console.log(box1.scrollHeight) //输出600px(500px+padding的50px * 2)
+            console.log(box1.clientWidth); 
+            console.log(box1.scrollWidth)
+            //输出 box1 的滚动内容区域的完整尺寸，这里因为 box1 包含一个比自己高的子元素（box2），所以其 scrollHeight 会大于其自身的高度。
 
-            // console.log(box1.scrollHeight)
-            // console.log(box1.scrollWidth)
-
-            // console.log(box1.offsetParent)
-
-            // console.log(box1.offsetLeft)
-            // console.log(box1.offsetTop)
+            console.log(box1.offsetParent)
+            //通常这会输出 <body>，除非页面中有其他元素具有 CSS 定位。
+            
+            console.log(btn.clientHeight);
+            console.log(box1.offsetLeft)
+            console.log(box1.offsetTop)
+            //输出 box1 相对于其 offsetParent（通常是 <body>）的位置，这里包括从 <body> 的边缘到 box1 的边缘的距离。
 
             console.log(box1.scrollTop)
+            //输出当前垂直滚动条的位置。由于在初始状态下没有滚动，通常这个值为 0。
 
         }
         
