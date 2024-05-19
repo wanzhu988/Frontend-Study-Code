@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            定时器的本质，就是在指定时间后将函数添加到消息队列中
+        */
+ 
+            console.time() //测量从设置 setTimeout 到其回调函数执行的时间。
+            setTimeout(function(){
+                console.timeEnd()
+                console.log("定时器执行了~")
+            }, 3000)
+
+            // 使程序卡6s
+            const begin = Date.now()
+            while (Date.now() - begin < 6000) {}
+
+            /* 
+            setInterval() 没间隔一段时间就将函数添加到消息队列中
+                但是如果函数执行的速度比较慢，它是无法确保每次执行的间隔都是一样的
+
+                每 3 秒执行一次
+                console.time() 和 console.timeEnd() 来测量实际的执行间隔
+                如果函数执行时间长于间隔时间，setInterval 可能导致回调函数的执行开始重叠，从而造成性能问题
+        */
+            console.time("间隔") 
+            setInterval(function(){
+                console.timeEnd("间隔")
+
+                // console.log("定时器执行了~~")
+                alert("定时器执行~")
+
+                console.time("间隔")
+            }, 3000)
+
+            /* 
+            希望可以确保函数每次执行都有相同间隔
+            为了解决 setInterval 可能出现的执行重叠问题，
+            代码中又使用了递归的 setTimeout 方法，这种方法可以确保每次执行之间都有固定的间隔时间：
+        */
+
+            console.time("间隔")
+            setTimeout(function fn() {
+                console.timeEnd("间隔")
+                alert("哈哈")
+                console.time("间隔")
+                // 在setTimeout的回调函数的最后，在调用一个setTimeout
+                setTimeout(fn, 3000)
+            }, 3000)
+
+            //延时为 0 的 setTimeout。尽管延时设置为 0，但实际上它将在当前执行栈清空后，即所有同步代码执行完毕之后才会执行
+            //这意味着 console.log(222222) 会先于 console.log(11111) 输出。
+            setTimeout(()=>{
+                console.log(11111)
+            }, 0)
+
+            console.log(222222)
+        </script>
+    </body>
+</html>

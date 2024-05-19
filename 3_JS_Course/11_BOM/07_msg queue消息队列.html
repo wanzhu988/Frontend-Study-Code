@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn">点我一下</button>
+        <button id="btn02">点我一下2</button>
+
+        <script>
+            /* 
+                事件循环（event loop）
+                    - 函数在每次执行时，都会产生一个执行环境
+                    - 执行环境负责存储函数执行时产生的一切数据
+                    - 问题：函数的执行环境要存储到哪里呢？
+                        - 函数的执行环境存储到了一个叫做调用栈的地方
+                        - 栈，是一种数据结构，特点 后进先出
+                        - 队列，是一种数据结构，特点 先进先出
+                    
+                    调用栈（call stack）
+                        - 调用栈负责存储函数的执行环境
+                        - 当一个函数被调用时，它的执行环境会作为一个栈帧
+                            插入到调用栈的栈顶，函数执行完毕其栈帧会自动从栈中弹出
+
+                    消息队列
+                        - 消息队列负责存储将要执行的函数
+                        - 当我们触发一个事件时，其响应函数并不是直接就添加到调用栈中的
+                            因为调用栈中有可能会存在一些还没有执行完的代码
+                        - 事件触发后，JS引擎是将事件响应函数插入到消息队列中排队
+                            
+                        
+            */
+
+            function fn() {
+                let a = 10
+                let b = 20
+                function fn2() {
+                    console.log("fn2")
+                }
+                fn2()
+
+                console.log("fn~")
+            }
+            fn()
+
+            console.log(1111)
+
+            const btn = document.getElementById("btn")
+            const btn02 = document.getElementById("btn02")
+            btn.onclick = function () {
+                alert(1111)
+
+                const begin = Date.now()
+                while (Date.now() - begin < 3000) {}
+                //当第一个按钮被点击时，alert(1111) 被立即执行。
+                //紧随其后的是一个长达三秒的阻塞循环。这个阻塞是同步的，会阻塞浏览器的主线程
+                //在这三秒内，任何其他的 JavaScript 执行（包括对第二个按钮的响应）都会被阻塞。
+                //即使在阻塞期间点击了第二个按钮，它的事件也只能在消息队列中等待，直到当前的阻塞代码执行完毕并且调用栈清空后才会执行。
+
+                //用户会经历一个明显的界面冻结，这是因为 JavaScript 运行在单线程中，
+                //而且阻塞循环消耗了这个线程的所有资源，暂时无法处理其他任何事件，包括渲染更新。
+                
+                //这种阻塞行为通常是不推荐的，因为它对用户体验非常不友好。在现代 web 开发中，推荐使用非阻塞的异步编程模式，
+                //例如使用 setTimeout、setInterval、Promise 或 async/await 来处理耗时操作。
+            }
+
+            btn02.onclick = function () {
+                alert(2222)
+            }
+        </script>
+    </body>
+</html>
