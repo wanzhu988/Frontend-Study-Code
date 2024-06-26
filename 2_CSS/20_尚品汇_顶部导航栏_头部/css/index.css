@@ -1,0 +1,83 @@
+/* 基础设置 */
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+/* #region顶部导航条 start */
+.topbar {
+    height: 30px;
+    background-color: #ececec;
+}
+.welcome {
+    height: 30px;
+    line-height: 30px;
+    font-size: 0px;
+    color: #666;
+}
+.welcome span, .welcome a {
+    font-size: 12px;
+}
+
+.welcome .hello {
+    margin-right: 28px;
+}
+
+.welcome .login {
+    padding-right: 10px;
+    border-right: 1px #666 solid;
+}
+
+.welcome .register {
+    padding-left: 10px;
+}
+
+.topbar-navi .list{
+    height: 30px;
+    line-height: 30px;
+}
+
+.topbar-navi .list li{
+    float: left;
+}
+
+.topbar-navi .list li a{
+    padding: 0 15px;
+    border-right: 1px solid #666;
+}
+
+.topbar-navi .list li:first-child a {
+    padding-left: 0px;
+}
+
+.topbar-navi .list li:last-child a {
+    padding-right: 0px;
+    border: 0px;
+}
+/* #endregion顶部导航条 end */
+
+/* #region头部 start*/
+.header {
+    height: 120px;
+    background-color: antiquewhite;
+}
+.header .search form {
+    margin-top: 42px;
+    font-size: 0px;
+    /* input和button有默认的fz，继承的样式打败不了默认fz */
+}
+.header .search input{
+    width: 508px;
+    height: 34px;
+    border: 1px solid #dd302d;
+}
+.header .search button{
+    width: 80px;
+    height: 36px;
+    background-color: #dd302d;
+    vertical-align: top;
+    background-image: url('../images/serch_icon.png');
+    background-repeat: no-repeat;
+    background-position: 28px 6px;
+}
+/* #endregion头部 end*/
